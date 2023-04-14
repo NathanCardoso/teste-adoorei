@@ -1,0 +1,4 @@
+@function rem($pixelFont, $contextFont: 16){
+	$result: calc($pixelFont / $contextFont);
+	@return $result + rem
+};
