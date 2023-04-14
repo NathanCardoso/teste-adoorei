@@ -1,15 +1,19 @@
 <template>
-	<HelloWorld/>
+	<LogoLocaWeb />
+	<UserLogin/>
 </template>
 
 <script>
-import  HelloWorld from './components/HelloWorld.vue'
+import LogoLocaWeb from "./components/atoms/LogoLocaWeb.vue"
+import  UserLogin from './components/UserLogin.vue'
+
 export default {
 	data() {
 		return {}
 	},
 	components: {
-		HelloWorld
+		UserLogin,
+		LogoLocaWeb
 	}
 }
 </script>
