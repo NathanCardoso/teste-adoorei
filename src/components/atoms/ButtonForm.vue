@@ -30,5 +30,6 @@ export default {
 		padding: rem(24) 0;
 		text-align: center;
 		text-transform: uppercase;
+		cursor: pointer;
 	}
 </style>
