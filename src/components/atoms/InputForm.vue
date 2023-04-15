@@ -6,7 +6,7 @@
       :id="inputId"
       :name="inputName"
       :placeholder="inputPlaceholder"
-			class="input"
+      class="input"
     />
   </div>
 </template>
@@ -44,10 +44,10 @@ export default {
   data() {
     return {
       inputId: this.inputId,
-			inputName: this.inputName,
-			inputType: this.inputType,
-			inputPlaceholder: this.inputPlaceholder,
-			labelContent: this.labelContent
+      inputName: this.inputName,
+      inputType: this.inputType,
+      inputPlaceholder: this.inputPlaceholder,
+      labelContent: this.labelContent,
     };
   },
 };
@@ -55,23 +55,28 @@ export default {
 
 <style lang="scss" scoped>
 .input-form {
-	display: flex;
-	flex-direction: column;
-	gap: rem(4);
+  display: flex;
+  flex-direction: column;
+  gap: rem(4);
 
-	.label {
-		color: $black;
-	}
+  .label {
+    color: $black;
+  }
 
-	.input {
-		padding: rem(24) rem(14);
-		border-radius: rem(4);
-		border: rem(1) solid $gray_alt;
+  .input {
+    padding: rem(24) rem(14);
+    border-radius: rem(4);
+    border: rem(1) solid $gray_alt;
+    outline: none;
 
-		&::placeholder {
-			color: $black;
-			font-size: rem(16); 
-		}
-	}
+    &::placeholder {
+      color: $black;
+      font-size: rem(16);
+    }
+
+    &:hover, &:focus {
+      border: rem(1) solid $pink;
+    }
+  }
 }
 </style>
