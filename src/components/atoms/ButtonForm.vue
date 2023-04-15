@@ -27,7 +27,8 @@ export default {
 		background: $pink;
 		color: $white;
 		width: 100%;
-		padding: rem(20) 0;
+		padding: rem(24) 0;
 		text-align: center;
+		text-transform: uppercase;
 	}
 </style>

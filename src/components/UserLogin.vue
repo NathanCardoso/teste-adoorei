@@ -57,7 +57,7 @@ export default {
 
 <style lang="scss" scoped>
 .user-login {
-	max-width: 400px;
+	width: 500px;
 	padding: rem(30);
 	background: $white;
 	border-radius: rem(4);

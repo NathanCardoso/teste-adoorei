@@ -64,7 +64,7 @@ export default {
 	}
 
 	.input {
-		padding: rem(15) rem(10);
+		padding: rem(24) rem(14);
 		border-radius: rem(4);
 		border: rem(1) solid $gray_alt;
 

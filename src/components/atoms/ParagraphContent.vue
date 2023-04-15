@@ -26,7 +26,7 @@ export default {
 	.paragraph {
 		.paragraph-content {
 			font-size: rem($paragraphSize);
-			color: $gray;
+			color: $black;
 		}
 	}
 </style>
