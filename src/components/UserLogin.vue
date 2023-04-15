@@ -8,20 +8,23 @@
             content="Para acessar sua conta informe seu e-mail e senha"
           />
         </div>
-        <InputForm
-          inputId="email"
-          inputName="userEmail"
-          inputType="email"
-          inputPlaceholder="Seu e-mail"
-          labelContent="E-mail"
-        />
-        <InputForm
-          inputId="password"
-          inputName="userPassword"
-          inputType="password"
-          inputPlaceholder="Sua senha"
-          labelContent="Senha"
-        />
+        <div class="form-input">
+          <InputForm
+            inputId="email"
+            inputName="userEmail"
+            inputType="email"
+            inputPlaceholder="Seu e-mail"
+            labelContent="E-mail"
+          />
+          <InputForm
+            inputId="password"
+            inputName="userPassword"
+            inputType="password"
+            inputPlaceholder="Sua senha"
+            labelContent="Senha"
+          />
+					<ResetPassword />
+        </div>
       </form>
     </div>
   </section>
@@ -31,6 +34,7 @@
 import TitleContent from "./atoms/TitleContent.vue";
 import ParagraphContent from "./atoms/ParagraphContent.vue";
 import InputForm from "./atoms/InputForm.vue";
+import ResetPassword from "./atoms/ResetPassword.vue"
 
 export default {
   name: "UserLogin",
@@ -41,6 +45,7 @@ export default {
     TitleContent,
     ParagraphContent,
     InputForm,
+		ResetPassword
   },
 };
 </script>
@@ -49,14 +54,18 @@ export default {
 .user-login {
   .form-login {
     max-width: 400px;
-    display: flex;
-    flex-direction: column;
-    gap: rem(20);
 
-		.form-header {
+    .form-header {
 			display: flex;
-			flex-direction: column; 
-			gap: rem(10);
+      flex-direction: column;
+      gap: rem(10);
+    }
+
+		.form-input {
+			margin-top: rem(20);
+			display: flex;
+			flex-direction: column;
+			gap: rem(20);
 		}
   }
 }
