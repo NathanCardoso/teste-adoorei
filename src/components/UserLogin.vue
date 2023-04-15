@@ -23,7 +23,10 @@
             inputPlaceholder="Sua senha"
             labelContent="Senha"
           />
-					<ResetPassword />
+          <ResetPassword />
+        </div>
+        <div class="form-button">
+          <ButtonForm buttonName="Fazer Login" />
         </div>
       </form>
     </div>
@@ -34,7 +37,8 @@
 import TitleContent from "./atoms/TitleContent.vue";
 import ParagraphContent from "./atoms/ParagraphContent.vue";
 import InputForm from "./atoms/InputForm.vue";
-import ResetPassword from "./atoms/ResetPassword.vue"
+import ResetPassword from "./atoms/ResetPassword.vue";
+import ButtonForm from "./atoms/ButtonForm.vue";
 
 export default {
   name: "UserLogin",
@@ -45,27 +49,36 @@ export default {
     TitleContent,
     ParagraphContent,
     InputForm,
-		ResetPassword
+    ResetPassword,
+    ButtonForm,
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .user-login {
-  .form-login {
-    max-width: 400px;
+	max-width: 400px;
+	padding: rem(30);
+	background: $white;
+	border-radius: rem(4);
+	border: rem(1) solid $gray_alt_1;
 
+  .form-login {
     .form-header {
-			display: flex;
+      display: flex;
       flex-direction: column;
       gap: rem(10);
     }
 
-		.form-input {
-			margin-top: rem(20);
-			display: flex;
-			flex-direction: column;
-			gap: rem(20);
+    .form-input {
+      margin-top: rem(20);
+      display: flex;
+      flex-direction: column;
+      gap: rem(20);
+    }
+
+		.form-button {
+			margin-top: rem(24);
 		}
   }
 }
