@@ -19,7 +19,7 @@ export default {
 	.reset {
 		color: $gray;
 		text-decoration: none;
-		font-weight: 600;
+		font-size: rem($paragraphSize);
 	}
 }
 </style>
