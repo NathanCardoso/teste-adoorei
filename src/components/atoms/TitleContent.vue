@@ -8,7 +8,7 @@
 export default {
   name: "TitleContent",
   props: {
-    content: {
+    contentValue: {
       type: String,
       default: "",
       required: true,
@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      content: this.content,
+      content: this.contentValue,
     };
   },
 };

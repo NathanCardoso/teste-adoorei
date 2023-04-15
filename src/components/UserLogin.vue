@@ -1,9 +1,9 @@
 <template>
   <section class="user-login">
     <div class="container">
-      <form class="form-login">
+      <Form @submit="onSubmit" class="form-login">
         <div class="form-header">
-          <TitleContent content="Entre na sua conta" />
+          <TitleContent contentValue="Entre na sua conta" />
           <ParagraphContent
             content="Para acessar sua conta informe seu e-mail e senha"
           />
@@ -15,6 +15,7 @@
             inputType="email"
             inputPlaceholder="Seu e-mail"
             labelContent="E-mail"
+            inputRule="validateEmail"
           />
           <InputForm
             inputId="password"
@@ -22,13 +23,14 @@
             inputType="password"
             inputPlaceholder="Sua senha"
             labelContent="Senha"
+						inputRule="validatePassword"
           />
           <ResetPassword />
         </div>
         <div class="form-button">
           <ButtonForm buttonName="Fazer Login" />
         </div>
-      </form>
+      </Form>
     </div>
   </section>
 </template>
@@ -39,29 +41,28 @@ import ParagraphContent from "./atoms/ParagraphContent.vue";
 import InputForm from "./atoms/InputForm.vue";
 import ResetPassword from "./atoms/ResetPassword.vue";
 import ButtonForm from "./atoms/ButtonForm.vue";
+import { Form } from "vee-validate";
 
 export default {
   name: "UserLogin",
-  data() {
-    return {};
-  },
   components: {
     TitleContent,
     ParagraphContent,
     InputForm,
     ResetPassword,
     ButtonForm,
-  },
+    Form,
+  }
 };
 </script>
 
 <style lang="scss" scoped>
 .user-login {
-	width: 500px;
-	padding: rem(30);
-	background: $white;
-	border-radius: rem(4);
-	border: rem(1) solid $gray_alt_1;
+  width: 500px;
+  padding: rem(30);
+  background: $white;
+  border-radius: rem(4);
+  border: rem(1) solid $gray_alt_1;
 
   .form-login {
     .form-header {
@@ -77,9 +78,9 @@ export default {
       gap: rem(20);
     }
 
-		.form-button {
-			margin-top: rem(24);
-		}
+    .form-button {
+      margin-top: rem(24);
+    }
   }
 }
 </style>

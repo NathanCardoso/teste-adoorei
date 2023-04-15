@@ -1,17 +1,21 @@
 <template>
   <div class="input-form">
     <label :for="inputId" class="label">{{ labelContent }}</label>
-    <input
+    <Field
       :type="inputType"
       :id="inputId"
       :name="inputName"
       :placeholder="inputPlaceholder"
+      :rules="inputRule"
       class="input"
     />
+    <ErrorMessage :name="inputName" class="error"/>
   </div>
 </template>
 
 <script>
+import { Field, ErrorMessage, defineRule } from "vee-validate";
+
 export default {
   name: "InputForm",
   props: {
@@ -40,6 +44,10 @@ export default {
       default: "",
       required: true,
     },
+    inputRule: {
+      type: String,
+      default: "",
+    },
   },
   data() {
     return {
@@ -47,9 +55,14 @@ export default {
       inputName: this.inputName,
       inputType: this.inputType,
       inputPlaceholder: this.inputPlaceholder,
+      inputRule: this.inputRule,
       labelContent: this.labelContent,
     };
   },
+  components: {
+    Field,
+    ErrorMessage,
+  }
 };
 </script>
 
@@ -74,9 +87,14 @@ export default {
       font-size: rem(16);
     }
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       border: rem(1) solid $pink;
     }
   }
+
+	.error {
+		color: red;
+	}
 }
 </style>

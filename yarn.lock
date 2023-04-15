@@ -164,6 +164,11 @@
     "@vue/compiler-dom" "3.2.47"
     "@vue/shared" "3.2.47"
 
+"@vue/devtools-api@^6.5.0":
+  version "6.5.0"
+  resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.5.0.tgz#98b99425edee70b4c992692628fa1ea2c1e57d07"
+  integrity sha512-o9KfBeaBmCKl10usN4crU53fYtC1r7jJwdGKjPT24t348rHxgfpZ0xL3Xm/gLUYnc0oTp8LAmrxOeLyu6tbk2Q==
+
 "@vue/reactivity-transform@3.2.47":
   version "3.2.47"
   resolved "https://registry.yarnpkg.com/@vue/reactivity-transform/-/reactivity-transform-3.2.47.tgz#e45df4d06370f8abf29081a16afd25cffba6d84e"
@@ -451,6 +456,13 @@ to-regex-range@^5.0.1:
   integrity sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==
   dependencies:
     is-number "^7.0.0"
+
+vee-validate@^4.8.5:
+  version "4.8.5"
+  resolved "https://registry.yarnpkg.com/vee-validate/-/vee-validate-4.8.5.tgz#915bf7c658464089fe45cd497f472c95f847bb1f"
+  integrity sha512-371c9sx6EfXoomuu9psSd+VGsKL9sbWeuRyN9x2a4tq0q8l1VdYMU9Xv6jhCez4MZykgWA7flpwXfbGzXR0/lw==
+  dependencies:
+    "@vue/devtools-api" "^6.5.0"
 
 vite@^4.2.0:
   version "4.2.1"
