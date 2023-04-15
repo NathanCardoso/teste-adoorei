@@ -1,11 +1,12 @@
 <template>
-  <div>
-    <label :for="inputId">{{ labelContent }}</label>
+  <div class="input-form">
+    <label :for="inputId" class="label">{{ labelContent }}</label>
     <input
       :type="inputType"
       :id="inputId"
       :name="inputName"
       :placeholder="inputPlaceholder"
+			class="input"
     />
   </div>
 </template>
@@ -53,4 +54,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.input-form {
+	display: flex;
+	flex-direction: column;
+
+	.label {
+		color: $gray;
+	}
+
+	.input {
+		padding: rem(15) rem(10);
+		border-radius: rem(4);
+		border: rem(1) solid $gray_alt;
+
+		&::placeholder {
+			color: $black;
+			font-size: rem(16); 
+		}
+	}
+}
 </style>
