@@ -57,9 +57,10 @@ export default {
 .input-form {
 	display: flex;
 	flex-direction: column;
+	gap: rem(4);
 
 	.label {
-		color: $gray;
+		color: $black;
 	}
 
 	.input {
