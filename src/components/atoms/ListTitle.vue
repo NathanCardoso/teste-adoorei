@@ -1,5 +1,5 @@
 <template>
-  <div class="accommodation-title">
+  <div class="list-title">
     <h3 class="title">
       {{ titleContent }} <span v-if="serverCountry" class="server-country">{{ serverCountry }}</span>
     </h3>
@@ -8,7 +8,7 @@
 
 <script>
 export default {
-  name: "AccommodationTitle",
+  name: "ListTitle",
   props: {
     titleContent: {
       type: String,
@@ -30,10 +30,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	.accommodation-title {
+	.list-title {
 		.title {
-			color: $black;
-			font-size: rem(20);
+			color: $gray;
+			font-size: rem(18);
+			font-weight: bold;
 
 			.server-country {
 				text-decoration: underline;

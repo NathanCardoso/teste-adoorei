@@ -17,7 +17,7 @@ export default {
 
 <style lang="scss">
 .main {
-  height: 100vh;
+  // height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;

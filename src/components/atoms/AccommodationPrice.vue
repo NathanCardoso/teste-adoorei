@@ -1,6 +1,6 @@
 <template>
   <div class="accommodation-price">
-		<p class="price">{{price}}</p>
+		<p class="price">{{price[0]}}<span class="price-number">{{price[1]}}</span>{{price[2]}}</p>
 	</div>
 </template>
 
@@ -9,15 +9,16 @@ export default {
   name: "AccommodationPrice",
 	props: {
 		price: {
-			type: String,
-			default: ""
+			type: Array,
+			default: [],
+			required: true
 		}
 	},
 	data() {
 		return {
 			price: this.price
 		}
-	}
+	},
 };
 </script>
 
@@ -28,8 +29,12 @@ export default {
 
 		.price {
 			color: $pink;
-			font-size: rem(28);
-			font-weight: bold;
+			font-size: rem(20);
+
+			.price-number {
+				font-size: rem(36);
+				font-weight: bold;
+			}
 		}
 	}
 </style>

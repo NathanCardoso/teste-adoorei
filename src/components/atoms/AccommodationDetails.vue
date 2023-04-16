@@ -30,7 +30,8 @@ export default {
 		.details {
 			color: $gray;
 			font-size: rem(16);
-			line-height: rem(22);
+			line-height: rem(20);
+			text-align: center;
 		}
 	}
 </style>
