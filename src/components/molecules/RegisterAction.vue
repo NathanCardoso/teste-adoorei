@@ -1,7 +1,7 @@
 <template>
   <div class="register-action">
     <ParagraphContent content="Ainda não tem conta?" />
-    <a href="#" class="register">Cadastre-se</a>
+    <a :href="registerLink" class="register">Cadastre-se</a>
   </div>
 </template>
 
@@ -9,6 +9,18 @@
 import ParagraphContent from "../atoms/ParagraphContent.vue";
 export default {
   name: "RegisterAction",
+	props: {
+		registerLink: {
+			type: String,
+			default: "/",
+			required: true
+		}
+	},
+	data() {
+		return {
+			registerLink: this.registerLink
+		}
+	},
   components: {
     ParagraphContent,
   },

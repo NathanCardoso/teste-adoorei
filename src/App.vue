@@ -2,7 +2,7 @@
   <main class="main">
     <LogoLocaWeb />
     <UserLogin />
-		<RegisterAction />
+		<RegisterAction registerLink="/UserRegister"/>
   </main>
 </template>
 
