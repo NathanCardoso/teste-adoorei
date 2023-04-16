@@ -28,7 +28,7 @@ export default {
 		justify-content: center;
 
 		.details {
-			color: $black;
+			color: $gray;
 			font-size: rem(16);
 			line-height: rem(22);
 		}

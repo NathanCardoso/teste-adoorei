@@ -28,7 +28,8 @@ export default {
 
 		.price {
 			color: $pink;
-			font-size: rem(24);
+			font-size: rem(28);
+			font-weight: bold;
 		}
 	}
 </style>
