@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-    <h1 class="title-content">{{ content }}</h1>
+    <h1 class="title-content">{{ content }} <br> <span v-if="emphasis" class="emphasis">{{emphasis}}</span></h1>
   </div>
 </template>
 
@@ -13,10 +13,15 @@ export default {
       default: "",
       required: true,
     },
+		emphasis: {
+			type: String,
+			default: "",
+		}
   },
   data() {
     return {
       content: this.contentValue,
+			emphasis: this.emphasis
     };
   },
 };
@@ -29,6 +34,12 @@ export default {
 			font-size: rem($titleSize);
 			font-weight: bold;
 			color: $black;
+			text-align: center;
+			line-height: rem(36);
+
+			.emphasis {
+				color: $pink
+			}
 		}
 	}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="register-action">
     <ParagraphContent content="Ainda não tem conta?" />
-    <a :href="registerLink" class="register">Cadastre-se</a>
+    <router-link :to="registerLink" class="register">Cadastre-se</router-link>
   </div>
 </template>
 

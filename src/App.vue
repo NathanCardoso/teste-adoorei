@@ -1,24 +1,16 @@
 <template>
   <main class="main">
-    <LogoLocaWeb />
-    <UserLogin />
-		<RegisterAction registerLink="/UserRegister"/>
+    <transition mode="out-in">
+      <router-view></router-view>
+    </transition>
   </main>
 </template>
 
 <script>
-import LogoLocaWeb from "./components/atoms/LogoLocaWeb.vue";
-import UserLogin from "./components/UserLogin.vue";
-import RegisterAction from "./components/molecules/RegisterAction.vue";
 
 export default {
   data() {
     return {};
-  },
-  components: {
-    UserLogin,
-    LogoLocaWeb,
-    RegisterAction,
   },
 };
 </script>

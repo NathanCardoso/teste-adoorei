@@ -1,5 +1,5 @@
 <template>
-  <section class="user-login">
+  <section class="form">
     <div class="container">
       <Form @submit="onSubmit" class="form-login">
         <div class="form-header">
@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.user-login {
+.form {
   width: 500px;
   padding: rem(30);
   background: $white;
