@@ -1,0 +1,133 @@
+[
+  {
+    "accommodation": {
+      "title": "Hospedagem 1",
+      "payment": ["", "Grátis", ""],
+      "charge": ["Você não paga nada para usar", "sem taxa de setup"],
+      "recommendation": "Ideal para quem está começando.",
+      "moreUsed": false
+    },
+    "benefits": [
+      {
+        "title": "Seu site em servidores",
+        "emphasis": "no Estados Unidos.",
+        "description": [
+          "Servidores em nossos data center americanos;",
+          "ASP, ASP.NET 2.0/3.0/3.5/ e 4.0/4.5/4.5.1/4.5.2(medium trust) ou PHP 5.3, 5.4, 5.5, 5.6 e 7.0;",
+          "1 usuário de FTP para upload ou download;",
+          "1 contas de e-mails profissionais;",
+          "1 subdomínio gratuito;"
+        ]
+      },
+      {
+        "title": "Suporte 24 horas, 7 dias por semana grátis;"
+      },
+      {
+        "title": "Aplicativos disponíveis;",
+        "description": ["WordPress;", "Drupal;", "entre outros..."]
+      },
+      {
+        "title": "Você ainda tem",
+        "description": [
+          "Webmail RoundCube;",
+          "AntiSpam;",
+          "Painel de gerenciamento de DNS;",
+          "Panel de controle web;",
+          "Configurações de PHP;",
+          "certificado SSL Grátis;",
+          "Transferência ilimitada."
+        ]
+      }
+    ]
+  },
+  {
+    "accommodation": {
+      "title": "Hospedagem 2",
+      "payment": ["R$", "499", "/mês"],
+      "charge": ["cobrado mensalmente", "sem taxa de setup"],
+      "recommendation": "Ideal para site com mais de 30k de visitas.",
+      "moreUsed": true
+    },
+    "benefits": [
+      {
+        "title": "Seu site em servidores",
+        "emphasis": "no Brasil.",
+        "description": [
+          "Servidores em nosso data center de São Paulo;",
+          "ASP, ASP.NET 2.0/3.0/3.5/ e 4.0/4.5/4.5.1/4.5.2(medium trust) ou PHP 5.3, 5.4, 5.5, 5.6 e 7.0;",
+          "10 usuário de FTP para upload ou download;",
+          "30 contas de e-mails profissionais;",
+          "10 subdomínio gratuito;"
+        ]
+      },
+      {
+        "title": "Suporte 24 horas, 7 dias por semana grátis;"
+      },
+      {
+        "title": "Aplicativos disponíveis;",
+        "description": ["WordPress;", "Drupal;", "entre outros..."]
+      },
+      {
+        "title": "Migração Gratuita",
+        "description": ["Migramos todos os seus sites para nossos servidores"]
+      },
+      {
+        "title": "Você ainda tem",
+        "description": [
+          "Webmail RoundCube;",
+          "AntiSpam;",
+          "Painel de gerenciamento de DNS;",
+          "Panel de controle web;",
+          "Configurações de PHP personalizáveis;",
+          "certificado SSL Grátis;",
+          "Transferência ilimitada."
+        ]
+      }
+    ]
+  },
+  {
+    "accommodation": {
+      "title": "Hospedagem 3",
+      "payment": ["R$", "999", "/mês"],
+      "charge": ["cobrado mensalmente", "sem taxa de setup"],
+      "recommendation": "Ideal para site com mais de 60k de visitas.",
+      "moreUsed": false
+    },
+    "benefits": [
+      {
+        "title": "Seu site em servidores",
+        "emphasis": "no Brasil.",
+        "description": [
+          "Servidores em nosso data center de São Paulo;",
+          "ASP, ASP.NET 2.0/3.0/3.5/ e 4.0/4.5/4.5.1/4.5.2(medium trust) ou PHP 5.3, 5.4, 5.5, 5.6 e 7.0;",
+          "10 usuário de FTP para upload ou download;",
+          "30 contas de e-mails profissionais;",
+          "10 subdomínio gratuito;"
+        ]
+      },
+      {
+        "title": "Suporte 24 horas, 7 dias por semana grátis;"
+      },
+      {
+        "title": "Aplicativos disponíveis;",
+        "description": ["WordPress;", "Drupal;", "entre outros..."]
+      },
+      {
+        "title": "Migração Gratuita",
+        "description": ["Migramos todos os seus sites para nossos servidores"]
+      },
+      {
+        "title": "Você ainda tem",
+        "description": [
+          "Webmail RoundCube;",
+          "AntiSpam;",
+          "Painel de gerenciamento de DNS;",
+          "Panel de controle web;",
+          "Configurações de PHP personalizáveis;",
+          "certificado SSL Grátis;",
+          "Transferência ilimitada."
+        ]
+      }
+    ]
+  }
+]
