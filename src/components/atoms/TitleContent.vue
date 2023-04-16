@@ -1,6 +1,6 @@
 <template>
   <div class="title">
-    <h1 class="title-content">{{ content }} <br> <span v-if="emphasis" class="emphasis">{{emphasis}}</span></h1>
+    <h1 class="title-content">{{ content }} <span v-if="emphasis" class="emphasis"><br> {{emphasis}}</span></h1>
   </div>
 </template>
 
@@ -38,7 +38,8 @@ export default {
 			line-height: rem(36);
 
 			.emphasis {
-				color: $pink
+				color: $pink;
+				text-decoration: underline;
 			}
 		}
 	}
