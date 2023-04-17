@@ -1,0 +1,30 @@
+<template>
+	<span class="input-alert">{{text}}</span>
+</template>
+
+<script>
+export default {
+	name: "InputAlert",
+	props: {
+		text: {
+			type: String,
+			default: "",
+			required: true
+		}
+	},
+	data() {
+		return {
+			text: this.text
+		}
+	}
+}
+</script>
+
+<style lang="scss">
+	.input-alert {
+		font-size: rem(16);
+		color: $gray;
+		display: inline-block;
+		width: 100%;
+	}
+</style>

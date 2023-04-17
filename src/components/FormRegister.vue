@@ -39,28 +39,32 @@
             labelContent="Senha"
             inputRule="validatePassword"
           />
-          <InputForm
-            inputId="password"
-            inputName="userPassword"
-            inputType="password"
-            inputPlaceholder="Sua senha"
-            labelContent="Confirme sua senha"
-            inputRule="validatePassword"
-          />
-          <div class="form-header-site">
-            <TitleContent contentValue="Dados do seu site" />
+          <div class="confirm-password">
             <InputForm
-              inputId="name"
-              inputName="name"
-              inputType="text"
-              inputPlaceholder="Meu site"
-              labelContent="Nome do seu site"
+              inputId="password"
+              inputName="userPassword"
+              inputType="password"
+              inputPlaceholder="Sua senha"
+              labelContent="Confirme sua senha"
+              inputRule="validatePassword"
             />
+            <InputAlert text="No mínimo 8 caracteres" />
           </div>
-          <ParagraphContent
-            content="Ao concluir com o seu cadastro você concorda com nossos termos de uso e politicas de privacidade."
-          />
         </div>
+        <div class="form-site">
+          <TitleContent contentValue="Dados do seu site" />
+          <InputForm
+            inputId="name"
+            inputName="name"
+            inputType="text"
+            inputPlaceholder="Meu site"
+            labelContent="Nome do seu site"
+          />
+          <InputAlert text="Exatamente igual o título do seu site" />
+        </div>
+        <ParagraphContent
+          content="Ao concluir com o seu cadastro você concorda com nossos termos de uso e politicas de privacidade."
+        />
         <div class="form-button">
           <ButtonForm buttonName="Criar conta" />
         </div>
@@ -76,6 +80,7 @@ import InputForm from "./atoms/InputForm.vue";
 import ResetPassword from "./atoms/ResetPassword.vue";
 import ButtonForm from "./atoms/ButtonForm.vue";
 import { Form } from "vee-validate";
+import InputAlert from "../components/atoms/InputAlert.vue";
 
 export default {
   name: "UserLogin",
@@ -86,6 +91,7 @@ export default {
     ResetPassword,
     ButtonForm,
     Form,
+    InputAlert,
   },
 };
 </script>
@@ -102,14 +108,32 @@ export default {
     .form-header {
       display: flex;
       flex-direction: column;
+      align-items: flex-start;
       gap: rem(10);
     }
 
     .form-input {
-      margin-top: rem(20);
+      margin: rem(20) 0 rem(20);
       display: flex;
       flex-direction: column;
       gap: rem(20);
+
+			.confirm-password {
+				display: flex;
+				flex-direction: column;
+				gap: rem(8);
+			}
+    }
+
+    .form-site {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: rem(10);
+      width: 100%;
+      padding: rem(20) 0;
+      border-top: rem(1) solid $gray_alt_1;
+      border-bottom: rem(1) solid $gray_alt_1;
     }
 
     .form-button {

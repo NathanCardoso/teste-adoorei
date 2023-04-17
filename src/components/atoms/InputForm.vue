@@ -71,6 +71,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: rem(4);
+	width: 100%;
 
   .label {
     color: $black;
