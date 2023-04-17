@@ -109,7 +109,7 @@ export default {
 		gap: rem(20);
 	}
 
-  .paragraph {
+  .accommodation-paragraph {
     padding: rem(16);
     border-top: rem(1) solid $gray_alt;
     border-bottom: rem(1) solid $gray_alt;
