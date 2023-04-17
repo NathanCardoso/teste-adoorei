@@ -62,9 +62,16 @@
           />
           <InputAlert text="Exatamente igual o título do seu site" />
         </div>
-        <ParagraphContent
-          content="Ao concluir com o seu cadastro você concorda com nossos termos de uso e politicas de privacidade."
-        />
+        <div class="complete-registration">
+					<InputCheckbox />
+          <div class="paragraph">
+            <p class="paragraph-content">
+              Ao concluir com seu cadastro você concorda com nossos
+              <a href="#" class="link">termos de uso</a> e
+              <a href="#" class="link">politicas de privacidade.</a>
+            </p>
+          </div>
+        </div>
         <div class="form-button">
           <ButtonForm buttonName="Criar conta" />
         </div>
@@ -77,6 +84,7 @@
 import TitleContent from "./atoms/TitleContent.vue";
 import ParagraphContent from "./atoms/ParagraphContent.vue";
 import InputForm from "./atoms/InputForm.vue";
+import InputCheckbox from "../components/atoms/InputCheckbox.vue"
 import ResetPassword from "./atoms/ResetPassword.vue";
 import ButtonForm from "./atoms/ButtonForm.vue";
 import { Form } from "vee-validate";
@@ -92,6 +100,7 @@ export default {
     ButtonForm,
     Form,
     InputAlert,
+		InputCheckbox
   },
 };
 </script>
@@ -118,11 +127,11 @@ export default {
       flex-direction: column;
       gap: rem(20);
 
-			.confirm-password {
-				display: flex;
-				flex-direction: column;
-				gap: rem(8);
-			}
+      .confirm-password {
+        display: flex;
+        flex-direction: column;
+        gap: rem(8);
+      }
     }
 
     .form-site {
@@ -134,6 +143,24 @@ export default {
       padding: rem(20) 0;
       border-top: rem(1) solid $gray_alt_1;
       border-bottom: rem(1) solid $gray_alt_1;
+    }
+
+    .complete-registration {
+      margin-top: rem(20);
+			display: flex;
+			
+
+      .paragraph {
+        .paragraph-content {
+          font-size: rem(18);
+          line-height: rem(22);
+          color: $black;
+
+					.link {
+						color: inherit;
+					}
+        }
+      }
     }
 
     .form-button {

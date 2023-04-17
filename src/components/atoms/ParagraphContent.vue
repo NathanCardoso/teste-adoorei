@@ -1,12 +1,12 @@
 <template>
-	<div class="accommodation-paragraph">
+	<div class="paragraph">
 		<p class="paragraph-content">{{content}}</p>
 	</div>
 </template>
 
 <script>
 export default {
-	name: "AccommodationParagraph",
+	name: "ParagraphContent",
 	props: {
 		content: {
 			type: String,
@@ -16,18 +16,18 @@ export default {
 	},
 	data() {
 		return {
-			content: this.content
+			content: this.content,
 		}
 	}
 }
 </script>
 
 <style lang="scss" scoped>
-	.accommodation-paragraph {
+	.paragraph {
 		.paragraph-content {
 			font-size: rem($paragraphSize);
 			line-height: rem(22);
-			color: $gray;
+			color: $black;
 		}
 	}
 </style>
