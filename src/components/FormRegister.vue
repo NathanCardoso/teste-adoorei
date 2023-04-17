@@ -11,10 +11,11 @@
         <div class="form-input">
           <InputForm
             inputId="name"
-            inputName="name"
+            inputName="userName"
             inputType="text"
             inputPlaceholder="Informe seu nome completo"
             labelContent="Nome completo"
+						inputRule="validateFullName"
           />
           <InputForm
             inputId="phone"
@@ -22,6 +23,7 @@
             inputType="text"
             inputPlaceholder="(99) 99999-0000"
             labelContent="Celular"
+						inputRule="validatePhone"
           />
           <InputForm
             inputId="email"
@@ -41,12 +43,12 @@
           />
           <div class="confirm-password">
             <InputForm
-              inputId="password"
-              inputName="userPassword"
+              inputId="userConfirmed"
+              inputName="userConfirmedPassword"
               inputType="password"
               inputPlaceholder="Sua senha"
               labelContent="Confirme sua senha"
-              inputRule="validatePassword"
+              inputRule="validatePassword|confirmedPassword:userPassword"
             />
             <InputAlert text="No mínimo 8 caracteres" />
           </div>
@@ -54,11 +56,12 @@
         <div class="form-site">
           <TitleContent contentValue="Dados do seu site" />
           <InputForm
-            inputId="name"
-            inputName="name"
+            inputId="site"
+            inputName="userSite"
             inputType="text"
             inputPlaceholder="Meu site"
             labelContent="Nome do seu site"
+						inputRule="validateSiteName"
           />
           <InputAlert text="Exatamente igual o título do seu site" />
         </div>
@@ -148,7 +151,7 @@ export default {
     .complete-registration {
       margin-top: rem(20);
 			display: flex;
-			
+
 
       .paragraph {
         .paragraph-content {

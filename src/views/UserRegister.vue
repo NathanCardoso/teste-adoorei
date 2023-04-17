@@ -45,7 +45,7 @@ export default {
   computed: {
     statePlanSelected() {
       return this.$store.state.selectPlan;
-    },
+    }
   },
 	methods: {
 		replacePlan() {
