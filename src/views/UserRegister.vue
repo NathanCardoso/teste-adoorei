@@ -42,6 +42,8 @@ export default {
 .accommodations {
   display: flex;
   flex-wrap: wrap;
-  gap: rem(20);
+	align-items: center;
+	justify-content: center;
+  gap: rem(24);
 }
 </style>

@@ -23,5 +23,6 @@ export default {
   align-items: center;
   flex-direction: column;
   gap: rem(40);
+	padding: rem(40) rem(24);
 }
 </style>
