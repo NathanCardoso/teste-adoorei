@@ -55,12 +55,19 @@ export default {
   beforeMount() {
     this.dataObject = Array.from(accommodationPlan);
   },
+	mounted() {
+		const userRegister = document.querySelector(".user-register .form")
+		const userRegisterWrapper = document.querySelector(".user-register .wrapper")
+	
+		userRegisterWrapper.style.maxHeight = (userRegister.clientHeight - 60) + "px"
+	}
 };
 </script>
 
 <style lang="scss" scoped>
 .user-register {
   display: flex;
+	align-items: flex-start;
   gap: rem(24);
 
   .wrapper-accommodation {

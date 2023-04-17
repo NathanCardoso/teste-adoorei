@@ -103,7 +103,6 @@ export default {
   }
 
 	.wrapper {
-		max-height: 910px;
 		overflow: hidden;
 		display: flex;
 		flex-direction: column;
