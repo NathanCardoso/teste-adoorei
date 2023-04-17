@@ -20,10 +20,12 @@
           <InputForm
             inputId="phone"
             inputName="userPhone"
-            inputType="text"
+            inputType="tel"
             inputPlaceholder="(99) 99999-0000"
             labelContent="Celular"
 						inputRule="validatePhone"
+						inputMask="(##) #####-####"
+						inputMaxLength="13"
           />
           <InputForm
             inputId="email"

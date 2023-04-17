@@ -34,7 +34,7 @@ const validateFullName = (value) => {
 const validatePhone = (value) => {
   if (!value) return "O campo celular é obrigatório.";
 
-  const regex = /^([0-9]{2})([0-9]{4,5})([0-9]{4})$/;
+  const regex = /^(?:\d{2}\s?)?(?:\d{5}|\d{4})-?\d{4}$/;
   if (!regex.test(value)) return "Digite um numero de telefone válido.";
 
   return true;

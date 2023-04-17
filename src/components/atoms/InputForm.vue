@@ -1,5 +1,6 @@
 <template>
   <div class="input-form">
+		{{inputMask}}
     <label :for="inputId" class="label">{{ labelContent }}</label>
     <Field
       :type="inputType"
@@ -7,6 +8,8 @@
       :name="inputName"
       :placeholder="inputPlaceholder"
       :rules="inputRule"
+			v-model="dataModel"
+			:maxlength="inputMaxLength"
       class="input"
     />
     <ErrorMessage :name="inputName" class="error"/>
@@ -48,6 +51,10 @@ export default {
       type: String,
       default: "",
     },
+		inputMaxLength: {
+			type: String,
+			default: "12"
+		}
   },
   data() {
     return {
@@ -56,13 +63,15 @@ export default {
       inputType: this.inputType,
       inputPlaceholder: this.inputPlaceholder,
       inputRule: this.inputRule,
+			inputMaxLength: this.inputMaxLength,
       labelContent: this.labelContent,
+			dataModel: ""
     };
   },
   components: {
     Field,
     ErrorMessage,
-  }
+  },
 };
 </script>
 
