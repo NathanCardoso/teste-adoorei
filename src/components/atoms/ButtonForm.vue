@@ -16,7 +16,7 @@ export default {
 		return {
 			buttonName: this.buttonName
 		}
-	}
+	},
 }
 </script>
 
