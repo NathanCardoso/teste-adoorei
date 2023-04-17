@@ -26,6 +26,7 @@ export default {
 	.paragraph {
 		.paragraph-content {
 			font-size: rem($paragraphSize);
+			line-height: rem(22);
 			color: $gray;
 		}
 	}

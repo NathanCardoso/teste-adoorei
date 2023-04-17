@@ -42,5 +42,11 @@ export default {
 				text-decoration: underline;
 			}
 		}
+
+		@media screen and (max-width: 479px) {
+			.title-content {
+				line-height: rem(30);
+			}
+		}
 	}
 </style>

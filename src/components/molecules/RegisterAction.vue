@@ -30,6 +30,7 @@ export default {
 <style lang="scss" scoped>
 	.register-action {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 1ch;
 
 		.register {

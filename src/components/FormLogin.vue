@@ -82,5 +82,13 @@ export default {
       margin-top: rem(24);
     }
   }
+
+	@media screen and (max-width: 767px) {
+		width: auto
+	} 
+
+	@media screen and (max-width: 479px) {
+		width: auto;
+	}
 }
 </style>

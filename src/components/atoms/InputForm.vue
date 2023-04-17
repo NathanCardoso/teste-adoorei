@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import { Field, ErrorMessage, defineRule } from "vee-validate";
+import { Field, ErrorMessage } from "vee-validate";
 
 export default {
   name: "InputForm",
@@ -80,11 +80,12 @@ export default {
     padding: rem(24) rem(14);
     border-radius: rem(4);
     border: rem(1) solid $gray_alt;
+		font-size: rem(18);
     outline: none;
 
     &::placeholder {
       color: $black;
-      font-size: rem(16);
+      font-size: rem(18);
     }
 
     &:hover,
