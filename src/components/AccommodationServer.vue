@@ -12,7 +12,7 @@
         <AccommodationDetails :content="dataObject.accommodation?.charge[0]" />
         <AccommodationDetails :content="dataObject.accommodation?.charge[1]" />
       </div>
-      <ParagraphContent :content="dataObject.accommodation?.recommendation" />
+      <AccommodationParagraph :content="dataObject.accommodation?.recommendation" />
       <div class="accommodation-button">
         <ButtonForm
           buttonName="Escolher esse plano"
@@ -28,7 +28,7 @@
 import AccommodationNumber from "./atoms/AccommodationNumber.vue";
 import AccommodationPrice from "./atoms/AccommodationPrice.vue";
 import AccommodationDetails from "./atoms/AccommodationDetails.vue";
-import ParagraphContent from "./atoms/ParagraphContent.vue";
+import AccommodationParagraph from "./atoms/AccommodationParagraph.vue";
 import ButtonForm from "./atoms/ButtonForm.vue";
 import AccommodationList from "./organisms/AccommodationList.vue";
 import AccommodationTag from "./atoms/AccommodationTag.vue";
@@ -70,7 +70,7 @@ export default {
     AccommodationNumber,
     AccommodationPrice,
     AccommodationDetails,
-    ParagraphContent,
+    AccommodationParagraph,
     ButtonForm,
     AccommodationList,
     AccommodationTag,

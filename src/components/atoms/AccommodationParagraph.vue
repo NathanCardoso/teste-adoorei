@@ -1,5 +1,5 @@
 <template>
-	<div class="paragraph">
+	<div class="accommodation-paragraph">
 		<p class="paragraph-content">{{content}}</p>
 	</div>
 </template>
@@ -23,7 +23,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-	.paragraph {
+	.accommodation-paragraph {
 		.paragraph-content {
 			font-size: rem($paragraphSize);
 			line-height: rem(22);

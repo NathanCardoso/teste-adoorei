@@ -1,12 +1,12 @@
 <template>
   <div class="register-action">
-    <ParagraphContent content="Ainda não tem conta?" />
+    <AccommodationParagraph content="Ainda não tem conta?" />
     <router-link :to="registerLink" class="register">Cadastre-se</router-link>
   </div>
 </template>
 
 <script>
-import ParagraphContent from "../atoms/ParagraphContent.vue";
+import AccommodationParagraph from "../atoms/AccommodationParagraph.vue";
 export default {
   name: "RegisterAction",
 	props: {
@@ -22,7 +22,7 @@ export default {
 		}
 	},
   components: {
-    ParagraphContent,
+    AccommodationParagraph,
   },
 };
 </script>

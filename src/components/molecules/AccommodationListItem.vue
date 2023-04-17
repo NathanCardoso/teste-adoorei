@@ -18,7 +18,7 @@
                 alt="Check"
               />
             </div>
-            <ParagraphContent :content="description" />
+            <AccommodationParagraph :content="description" />
           </li>
         </ul>
       </li>
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import ParagraphContent from "../atoms/ParagraphContent.vue";
+import AccommodationParagraph from "../atoms/AccommodationParagraph.vue";
 import ListTitle from "../atoms/ListTitle.vue";
 
 export default {
@@ -45,7 +45,7 @@ export default {
     };
   },
   components: {
-    ParagraphContent,
+    AccommodationParagraph,
     ListTitle,
   },
 };
