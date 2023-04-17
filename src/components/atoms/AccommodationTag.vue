@@ -41,15 +41,19 @@ export default {
   text-transform: uppercase;
 
   .more-used {
-		border-radius: rem(12);
-		width: 150px;
-		text-align: center;
-		padding: rem(8);
-		background: $green;
+    border-radius: rem(12);
+    width: 150px;
+    text-align: center;
+    padding: rem(8);
+    background: $green;
   }
 
   .chosen-product {
     background: $black;
+    border-radius: rem(12);
+    width: 200px;
+    text-align: center;
+    padding: rem(8);
   }
 }
 </style>

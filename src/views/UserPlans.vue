@@ -11,6 +11,7 @@
       :dataObject="data"
 			dynamicText="mais vendido"
 			dynamicClass="more-used"
+			:dynamicDisplay="data.accommodation.moreUsed"
     />
   </ul>
 </template>
@@ -35,6 +36,9 @@ export default {
     ParagraphContent,
     AccommodationServer,
   },
+	beforeMount() {
+		console.log(this.accommodationPlan[0])
+	}
 };
 </script>
 

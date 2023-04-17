@@ -1,5 +1,5 @@
 <template>
-	<button class="button-form">{{buttonName}}</button>
+	<button class="button-form" @click="submit">{{buttonName}}</button>
 </template>
 
 <script>
@@ -17,6 +17,11 @@ export default {
 			buttonName: this.buttonName
 		}
 	},
+	methods: {
+		submit() {
+			this.$emit("submit")
+		}
+	}
 }
 </script>
 

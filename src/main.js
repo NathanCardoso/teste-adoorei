@@ -6,4 +6,4 @@ import store from "./store"
 import setupValidators from './assets/js/validationRules'
 
 setupValidators()
-createApp(App).use(router)..use(store)mount('#app')
+createApp(App).use(router).use(store).mount('#app')

@@ -4,25 +4,67 @@
     contentValue="Você está muito próximo de mudar a forma de"
     emphasis="hospedar seu site"
   />
-  <section class="user-register">
+  <div class="user-register">
     <FormRegister />
-		
-  </section>
+    <div class="wrapper-accommodation">
+      <AccommodationSever
+        v-for="(data, index) in dataObject"
+        :dataObject="data.id === statePlanSelected ? data : null"
+        dynamicText="Plano escolhido"
+        dynamicClass="chosen-product"
+        :dynamicDisplay="true"
+      />
+			<ButtonPlan @submit="replacePlan"/> 
+    </div>
+  </div>
 </template>
 
 <script>
 import LogoLocaWeb from "../components/atoms/LogoLocaWeb.vue";
 import TitleContent from "../components/atoms/TitleContent.vue";
 import FormRegister from "../components/FormRegister.vue";
+import AccommodationSever from "../components/AccommodationServer.vue";
+import accommodationPlan from "../../public/data/accommodationPlan.json";
+import ButtonPlan from "../components/atoms/ButtonPlan.vue"
 
 export default {
   name: "UserRegister",
+  data() {
+    return {
+      accommodationPlan,
+      dataObject: [],
+    };
+  },
   components: {
     LogoLocaWeb,
     TitleContent,
     FormRegister,
+    AccommodationSever,
+		ButtonPlan
+  },
+  computed: {
+    statePlanSelected() {
+      return this.$store.state.selectPlan;
+    },
+  },
+	methods: {
+		replacePlan() {
+			this.$router.push("/plans")
+		}
+	},
+  beforeMount() {
+    this.dataObject = Array.from(accommodationPlan);
   },
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.user-register {
+  display: flex;
+  gap: rem(24);
+
+  .wrapper-accommodation {
+		position: relative;
+  }
+}
+</style>
