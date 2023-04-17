@@ -68,6 +68,7 @@ export default {
     .form-header {
       display: flex;
       flex-direction: column;
+			align-items: flex-start;
       gap: rem(10);
     }
 
