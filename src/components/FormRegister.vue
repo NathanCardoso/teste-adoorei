@@ -10,8 +10,8 @@
         </div>
         <div class="form-input">
           <InputForm
-            inputId="name"
-            inputName="userName"
+            inputId="user-name"
+            inputName="username"
             inputType="text"
             inputPlaceholder="Informe seu nome completo"
             labelContent="Nome completo"
@@ -19,8 +19,8 @@
             @inputValue="receiveInputValue"
           />
           <InputForm
-            inputId="phone"
-            inputName="userPhone"
+            inputId="user-phone"
+            inputName="phone"
             inputType="tel"
             inputPlaceholder="(99) 99999-0000"
             labelContent="Celular"
@@ -30,8 +30,8 @@
             @inputValue="receiveInputValue"
           />
           <InputForm
-            inputId="email"
-            inputName="userEmail"
+            inputId="user-email"
+            inputName="email"
             inputType="email"
             inputPlaceholder="Seu e-mail"
             labelContent="E-mail"
@@ -39,8 +39,8 @@
             @inputValue="receiveInputValue"
           />
           <InputForm
-            inputId="password"
-            inputName="userPassword"
+            inputId="user-password"
+            inputName="password"
             inputType="password"
             inputPlaceholder="Sua senha"
             labelContent="Senha"
@@ -54,7 +54,7 @@
               inputType="password"
               inputPlaceholder="Sua senha"
               labelContent="Confirme sua senha"
-              inputRule="validatePassword|confirmedPassword:userPassword"
+              inputRule="validatePassword|confirmedPassword:password"
             />
             <InputAlert text="No mínimo 8 caracteres" />
           </div>
@@ -62,8 +62,8 @@
         <div class="form-site">
           <TitleContent contentValue="Dados do seu site" />
           <InputForm
-            inputId="site"
-            inputName="userSite"
+            inputId="user-site"
+            inputName="site"
             inputType="text"
             inputPlaceholder="Meu site"
             labelContent="Nome do seu site"
@@ -129,9 +129,13 @@ export default {
     receiveCheckValue(value) {
       this.receiveCheck = value;
     },
-    onSubmit() {
-      console.log(this.receiveInput);
-      console.log(this.receiveCheck);
+    async onSubmit() {
+			try {
+				await this.$store.dispatch("userCreate", this.receiveInput)
+				this.$router.push("/account")
+			} catch(error) {
+				console.log(error, "lululu")
+			}
     },
   },
 };
