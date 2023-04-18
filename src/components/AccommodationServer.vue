@@ -1,5 +1,5 @@
 <template>
-  <li class="accommodation-server" v-if="dataObject">
+  <component :is="tag" class="accommodation-server" v-if="dataObject">
     <AccommodationTag
       :text="dynamicText"
       :classTag="dynamicClass"
@@ -23,7 +23,7 @@
       </div>
       <AccommodationList :listArray="dataObject.benefits" />
     </div>
-  </li>
+  </component>
 </template>
 
 <script>
@@ -59,6 +59,10 @@ export default {
       default: {},
       requried: true,
     },
+		tag: {
+			type: String,
+			default: "li"
+		}
   },
   data() {
     return {
@@ -66,6 +70,7 @@ export default {
       dynamicText: this.dynamicText,
       dynamicDisplay: this.dynamicDisplay,
       dataObject: this.dataObject,
+			tag: this.tag
     };
   },
   components: {

@@ -1,22 +1,26 @@
 <template>
-  <LogoLocaWeb />
-  <TitleContent
-    contentValue="Você está muito próximo de mudar a forma de"
-    emphasis="hospedar seu site"
-  />
-  <div class="user-register">
-    <FormRegister />
-    <div class="wrapper-accommodation">
-      <AccommodationSever
-        v-for="(data, index) in dataObject"
-        :dataObject="data.id === planSelectedLocalStorage ? data : null"
-        dynamicText="Plano escolhido"
-        dynamicClass="chosen-product"
-        :dynamicDisplay="true"
-      />
-      <ButtonPlan @submit="replacePlan" />
+  <main class="default">
+    <LogoLocaWeb />
+    <TitleContent
+      contentValue="Você está muito próximo de mudar a forma de"
+      emphasis="hospedar seu site"
+    />
+
+    <div class="user-register">
+      <FormRegister />
+      <div class="wrapper-accommodation">
+        <AccommodationSever
+          v-for="(data, index) in dataObject"
+          :dataObject="data.id === planSelectedLocalStorage ? data : null"
+          dynamicText="Plano escolhido"
+          dynamicClass="chosen-product"
+          :dynamicDisplay="true"
+					tag="div"
+        />
+        <ButtonPlan @submit="replacePlan" />
+      </div>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -55,20 +59,25 @@ export default {
   },
   beforeMount() {
     this.dataObject = Array.from(accommodationPlan);
-    this.planSelectedLocalStorage = Number(localStorage.getItem("planSelected"));
+    this.planSelectedLocalStorage = Number(
+      localStorage.getItem("planSelected")
+    );
   },
   mounted() {
     const userRegister = document.querySelector(".user-register .form");
     const userRegisterWrapper = document.querySelector(
       ".user-register .wrapper"
     );
-
     userRegisterWrapper.style.maxHeight = userRegister.clientHeight - 60 + "px";
   },
 };
 </script>
 
 <style lang="scss" scoped>
+.title {
+	text-align: center;
+}
+
 .user-register {
   display: flex;
   align-items: flex-start;

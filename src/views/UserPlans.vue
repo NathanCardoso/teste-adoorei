@@ -1,19 +1,21 @@
 <template>
-  <LogoLocaWeb />
-  <TitleContent
-    contentValue="Você está muito próximo de mudar a forma de"
-    emphasis="hospedar seu site"
-  />
-  <ParagraphContent content="Escolha o seu plano" />
-  <ul class="accommodations">
-    <AccommodationServer
-      v-for="(data, index) in accommodationPlan"
-      :dataObject="data"
-			dynamicText="mais vendido"
-			dynamicClass="more-used"
-			:dynamicDisplay="data.accommodation.moreUsed"
+  <main class="default">
+    <LogoLocaWeb />
+    <TitleContent
+      contentValue="Você está muito próximo de mudar a forma de"
+      emphasis="hospedar seu site"
     />
-  </ul>
+    <ParagraphContent content="Escolha o seu plano" />
+    <ul class="accommodations">
+      <AccommodationServer
+        v-for="(data, index) in accommodationPlan"
+        :dataObject="data"
+        dynamicText="mais vendido"
+        dynamicClass="more-used"
+        :dynamicDisplay="data.accommodation.moreUsed"
+      />
+    </ul>
+  </main>
 </template>
 
 <script>
@@ -36,18 +38,22 @@ export default {
     ParagraphContent,
     AccommodationServer,
   },
-	beforeMount() {
-		console.log(this.accommodationPlan[0])
-	}
+  beforeMount() {
+    console.log(this.accommodationPlan[0]);
+  },
 };
 </script>
 
 <style lang="scss" scoped>
+.title {
+	text-align: center;
+}
+
 .accommodations {
   display: flex;
   flex-wrap: wrap;
-	align-items: stretch;
-	justify-content: center;
+  align-items: stretch;
+  justify-content: center;
   gap: rem(24);
 }
 </style>
