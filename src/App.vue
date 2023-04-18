@@ -16,13 +16,13 @@ export default {
 </script>
 
 <style lang="scss">
-.main {
-  // height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: rem(40);
-	padding: rem(40) rem(24);
-}
+// .main {
+//   height: 100vh;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-direction: column;
+//   gap: rem(40);
+// 	padding: rem(40) rem(24);
+// }
 </style>

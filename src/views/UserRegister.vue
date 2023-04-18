@@ -9,12 +9,12 @@
     <div class="wrapper-accommodation">
       <AccommodationSever
         v-for="(data, index) in dataObject"
-        :dataObject="data.id === statePlanSelected ? data : null"
+        :dataObject="data.id === planSelectedLocalStorage ? data : null"
         dynamicText="Plano escolhido"
         dynamicClass="chosen-product"
         :dynamicDisplay="true"
       />
-			<ButtonPlan @submit="replacePlan"/> 
+      <ButtonPlan @submit="replacePlan" />
     </div>
   </div>
 </template>
@@ -25,7 +25,7 @@ import TitleContent from "../components/atoms/TitleContent.vue";
 import FormRegister from "../components/FormRegister.vue";
 import AccommodationSever from "../components/AccommodationServer.vue";
 import accommodationPlan from "../../public/data/accommodationPlan.json";
-import ButtonPlan from "../components/atoms/ButtonPlan.vue"
+import ButtonPlan from "../components/atoms/ButtonPlan.vue";
 
 export default {
   name: "UserRegister",
@@ -33,6 +33,7 @@ export default {
     return {
       accommodationPlan,
       dataObject: [],
+      planSelectedLocalStorage: 0,
     };
   },
   components: {
@@ -40,44 +41,47 @@ export default {
     TitleContent,
     FormRegister,
     AccommodationSever,
-		ButtonPlan
+    ButtonPlan,
   },
   computed: {
     statePlanSelected() {
       return this.$store.state.selectPlan;
-    }
+    },
   },
-	methods: {
-		replacePlan() {
-			this.$router.push("/plans")
-		}
-	},
+  methods: {
+    replacePlan() {
+      this.$router.push("/plans");
+    },
+  },
   beforeMount() {
     this.dataObject = Array.from(accommodationPlan);
+    this.planSelectedLocalStorage = Number(localStorage.getItem("planSelected"));
   },
-	mounted() {
-		const userRegister = document.querySelector(".user-register .form")
-		const userRegisterWrapper = document.querySelector(".user-register .wrapper")
-	
-		userRegisterWrapper.style.maxHeight = (userRegister.clientHeight - 60) + "px"
-	}
+  mounted() {
+    const userRegister = document.querySelector(".user-register .form");
+    const userRegisterWrapper = document.querySelector(
+      ".user-register .wrapper"
+    );
+
+    userRegisterWrapper.style.maxHeight = userRegister.clientHeight - 60 + "px";
+  },
 };
 </script>
 
 <style lang="scss" scoped>
 .user-register {
   display: flex;
-	align-items: flex-start;
+  align-items: flex-start;
   gap: rem(24);
 
   .wrapper-accommodation {
-		position: relative;
+    position: relative;
   }
 
-	@media screen and (max-width: 1023px) {
-		flex-direction: column-reverse;
-		align-items: center;
-		justify-content: center;
-	}
+  @media screen and (max-width: 1023px) {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
 }
 </style>

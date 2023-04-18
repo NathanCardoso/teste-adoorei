@@ -12,7 +12,9 @@
         <AccommodationDetails :content="dataObject.accommodation?.charge[0]" />
         <AccommodationDetails :content="dataObject.accommodation?.charge[1]" />
       </div>
-      <AccommodationParagraph :content="dataObject.accommodation?.recommendation" />
+      <AccommodationParagraph
+        :content="dataObject.accommodation?.recommendation"
+      />
       <div class="accommodation-button">
         <ButtonForm
           buttonName="Escolher esse plano"
@@ -79,7 +81,14 @@ export default {
     ...mapMutations(["SET_SELECT_PLAN"]),
     handleClick({ id }) {
       this.SET_SELECT_PLAN(id);
-      this.$router.push("/register");
+      this.toAddPlanLocalStorage(id);
+      this.replaceRouter("/register");
+    },
+    toAddPlanLocalStorage(planSelected) {
+      localStorage.setItem("planSelected", planSelected);
+    },
+    replaceRouter(route) {
+      this.$router.push(route);
     },
   },
 };
@@ -102,12 +111,12 @@ export default {
     }
   }
 
-	.wrapper {
-		overflow: hidden;
-		display: flex;
-		flex-direction: column;
-		gap: rem(20);
-	}
+  .wrapper {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: rem(20);
+  }
 
   .accommodation-paragraph {
     padding: rem(16);

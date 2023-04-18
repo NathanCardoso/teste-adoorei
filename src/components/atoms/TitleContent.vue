@@ -34,7 +34,6 @@ export default {
 			font-size: rem($titleSize);
 			font-weight: bold;
 			color: $black;
-			text-align: center;
 			line-height: rem(36);
 
 			.emphasis {

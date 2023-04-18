@@ -41,7 +41,7 @@ const validatePhone = (value) => {
 };
 
 const validateSiteName = (value) => {
-  if (!value) return "O campo nome do seu site completo é obrigatório.";
+  if (!value) return "O campo nome do seu site é obrigatório.";
 
   const regex = /^[a-zA-Z ]*$/;
   if (!regex.test(value)) return "Digite o nome do seu site.";
