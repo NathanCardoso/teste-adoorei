@@ -1,9 +1,9 @@
 <template>
-  <component :is="tag" class="accommodation-server" v-if="dataObject">
+  <component :is="definedTag" class="accommodation-server" v-if="objectData">
     <AccommodationTag
-      :text="dynamicText"
-      :classTag="dynamicClass"
-      v-if="dynamicDisplay"
+      :text="textDynamic"
+      :classTag="classDynamic"
+      v-if="displayDynamic"
     />
     <div class="wrapper">
       <AccommodationNumber :content="dataObject.accommodation?.title" />
@@ -18,7 +18,7 @@
       <div class="accommodation-button">
         <ButtonForm
           buttonName="Escolher esse plano"
-          @submit="handleClick(dataObject)"
+          @submit="handleClick(objectData)"
         />
       </div>
       <AccommodationList :listArray="dataObject.benefits" />
@@ -59,18 +59,18 @@ export default {
       default: {},
       requried: true,
     },
-		tag: {
-			type: String,
-			default: "li"
-		}
+    tag: {
+      type: String,
+      default: "li",
+    },
   },
   data() {
     return {
-      dynamicClass: this.dynamicClass,
-      dynamicText: this.dynamicText,
-      dynamicDisplay: this.dynamicDisplay,
-      dataObject: this.dataObject,
-			tag: this.tag
+      classDynamic: this.dynamicClass,
+      textDynamic: this.dynamicText,
+      displayDynamic: this.dynamicDisplay,
+      objectData: this.dataObject,
+      definedTag: this.tag,
     };
   },
   components: {

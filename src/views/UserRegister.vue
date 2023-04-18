@@ -15,7 +15,7 @@
           dynamicText="Plano escolhido"
           dynamicClass="chosen-product"
           :dynamicDisplay="true"
-					tag="div"
+          tag="div"
         />
         <ButtonPlan @submit="replacePlan" />
       </div>
@@ -75,7 +75,7 @@ export default {
 
 <style lang="scss" scoped>
 .title {
-	text-align: center;
+  text-align: center;
 }
 
 .user-register {

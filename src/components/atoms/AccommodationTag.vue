@@ -1,6 +1,6 @@
 <template>
   <div class="dynamic-tag">
-    <span :class="classTag">{{ text }}</span>
+    <span :class="tagClass">{{ textContent }}</span>
   </div>
 </template>
 
@@ -21,8 +21,8 @@ export default {
   },
   data() {
     return {
-      text: this.text,
-      classTag: this.classTag,
+      textContent: this.text,
+      tagClass: this.classTag,
     };
   },
 };

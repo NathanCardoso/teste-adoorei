@@ -87,7 +87,7 @@ export default {
         margin-top: 0;
         display: flex;
         flex-direction: column;
-				justify-content: space-between;
+        justify-content: space-between;
         height: 85vh;
 
         .video {

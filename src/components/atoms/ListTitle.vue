@@ -1,7 +1,10 @@
 <template>
   <div class="list-title">
     <h3 class="title">
-      {{ titleContent }} <span v-if="serverCountry" class="server-country">{{ serverCountry }}</span>
+      {{ contentTitle }}
+      <span v-if="countryServer" class="server-country">{{
+        countryServer
+      }}</span>
     </h3>
   </div>
 </template>
@@ -22,23 +25,23 @@ export default {
   },
   data() {
     return {
-      titleContent: this.titleContent,
-      serverCountry: this.serverCountry,
+      contentTitle: this.titleContent,
+      countryServer: this.serverCountry,
     };
   },
 };
 </script>
 
 <style lang="scss" scoped>
-	.list-title {
-		.title {
-			color: $gray;
-			font-size: rem(18);
-			font-weight: bold;
+.list-title {
+  .title {
+    color: $gray;
+    font-size: rem(18);
+    font-weight: bold;
 
-			.server-country {
-				text-decoration: underline;
-			}
-		}
-	}
+    .server-country {
+      text-decoration: underline;
+    }
+  }
+}
 </style>

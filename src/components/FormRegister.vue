@@ -15,7 +15,7 @@
             inputType="text"
             inputPlaceholder="Informe seu nome completo"
             labelContent="Nome completo"
-						inputRule="validateFullName"
+            inputRule="validateFullName"
           />
           <InputForm
             inputId="phone"
@@ -23,9 +23,9 @@
             inputType="tel"
             inputPlaceholder="(99) 99999-0000"
             labelContent="Celular"
-						inputRule="validatePhone"
-						inputMask="(##) #####-####"
-						inputMaxLength="13"
+            inputRule="validatePhone"
+            inputMask="(##) #####-####"
+            inputMaxLength="13"
           />
           <InputForm
             inputId="email"
@@ -63,12 +63,12 @@
             inputType="text"
             inputPlaceholder="Meu site"
             labelContent="Nome do seu site"
-						inputRule="validateSiteName"
+            inputRule="validateSiteName"
           />
           <InputAlert text="Exatamente igual o título do seu site" />
         </div>
         <div class="complete-registration">
-					<InputCheckbox />
+          <InputCheckbox />
           <div class="paragraph">
             <p class="paragraph-content">
               Ao concluir com seu cadastro você concorda com nossos
@@ -89,7 +89,7 @@
 import TitleContent from "./atoms/TitleContent.vue";
 import ParagraphContent from "./atoms/ParagraphContent.vue";
 import InputForm from "./atoms/InputForm.vue";
-import InputCheckbox from "../components/atoms/InputCheckbox.vue"
+import InputCheckbox from "../components/atoms/InputCheckbox.vue";
 import ResetPassword from "./atoms/ResetPassword.vue";
 import ButtonForm from "./atoms/ButtonForm.vue";
 import { Form } from "vee-validate";
@@ -105,8 +105,13 @@ export default {
     ButtonForm,
     Form,
     InputAlert,
-		InputCheckbox
+    InputCheckbox,
   },
+	methods: {
+		onSubmit() {
+			console.log("ok")
+		}
+	}
 };
 </script>
 
@@ -152,8 +157,7 @@ export default {
 
     .complete-registration {
       margin-top: rem(20);
-			display: flex;
-
+      display: flex;
 
       .paragraph {
         .paragraph-content {
@@ -161,9 +165,9 @@ export default {
           line-height: rem(22);
           color: $black;
 
-					.link {
-						color: inherit;
-					}
+          .link {
+            color: inherit;
+          }
         }
       }
     }

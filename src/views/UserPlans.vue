@@ -38,15 +38,12 @@ export default {
     ParagraphContent,
     AccommodationServer,
   },
-  beforeMount() {
-    console.log(this.accommodationPlan[0]);
-  },
 };
 </script>
 
 <style lang="scss" scoped>
 .title {
-	text-align: center;
+  text-align: center;
 }
 
 .accommodations {

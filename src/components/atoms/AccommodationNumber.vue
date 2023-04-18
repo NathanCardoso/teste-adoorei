@@ -1,6 +1,6 @@
 <template>
   <div class="accommodation-number">
-    <h2 class="accommodation-title">{{ content }}</h2>
+    <h2 class="accommodation-title">{{ value }}</h2>
   </div>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   },
   data() {
     return {
-      content: this.content,
+      value: this.content,
     };
   },
 };
@@ -27,7 +27,7 @@ export default {
     font-size: rem(28);
     color: $gray;
     text-align: center;
-		font-weight: bold;
+    font-weight: bold;
   }
 }
 </style>

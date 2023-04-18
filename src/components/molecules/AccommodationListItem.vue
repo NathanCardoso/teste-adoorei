@@ -1,11 +1,8 @@
 <template>
-  <li class="accommodation-list-item" v-for="(item, index) in listItem">
+  <li class="accommodation-list-item" v-for="(item, index) in itemList">
     <ul class="list-item">
       <li class="item">
-        <ListTitle
-          :titleContent="item.title"
-          :serverCountry="item.emphasis"
-        />
+        <ListTitle :titleContent="item.title" :serverCountry="item.emphasis" />
         <ul class="item-list-description" v-if="item.description">
           <li
             v-for="(description, index) in item.description"
@@ -41,7 +38,7 @@ export default {
   },
   data() {
     return {
-      listItem: this.listItem,
+      itemList: this.listItem,
     };
   },
   components: {
@@ -60,15 +57,15 @@ export default {
   .list-item {
     .item {
       .item-list-description {
-				margin-top: rem(16);
+        margin-top: rem(16);
 
         .item-description {
           display: flex;
-					gap: rem(8);
+          gap: rem(8);
 
-					+.item-description {
-						margin-top: rem(16);
-					}
+          + .item-description {
+            margin-top: rem(16);
+          }
         }
       }
     }
@@ -85,8 +82,8 @@ export default {
     }
   }
 
-	+.accommodation-list-item {
-		margin-top: rem(20);
-	}
+  + .accommodation-list-item {
+    margin-top: rem(20);
+  }
 }
 </style>

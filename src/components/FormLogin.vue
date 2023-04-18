@@ -23,7 +23,7 @@
             inputType="password"
             inputPlaceholder="Sua senha"
             labelContent="Senha"
-						inputRule="validatePassword"
+            inputRule="validatePassword"
           />
           <ResetPassword />
         </div>
@@ -52,7 +52,12 @@ export default {
     ResetPassword,
     ButtonForm,
     Form,
-  }
+  },
+  methods: {
+    onSubmit() {
+      console.log("ok");
+    },
+  },
 };
 </script>
 
@@ -68,7 +73,7 @@ export default {
     .form-header {
       display: flex;
       flex-direction: column;
-			align-items: flex-start;
+      align-items: flex-start;
       gap: rem(10);
     }
 
@@ -84,12 +89,12 @@ export default {
     }
   }
 
-	@media screen and (max-width: 767px) {
-		width: auto
-	} 
+  @media screen and (max-width: 767px) {
+    width: auto;
+  }
 
-	@media screen and (max-width: 479px) {
-		width: auto;
-	}
+  @media screen and (max-width: 479px) {
+    width: auto;
+  }
 }
 </style>

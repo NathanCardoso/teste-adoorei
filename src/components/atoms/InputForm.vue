@@ -1,18 +1,17 @@
 <template>
   <div class="input-form">
-		{{inputMask}}
-    <label :for="inputId" class="label">{{ labelContent }}</label>
+    <label :for="idInput" class="label">{{ contentLabel }}</label>
     <Field
-      :type="inputType"
-      :id="inputId"
-      :name="inputName"
-      :placeholder="inputPlaceholder"
-      :rules="inputRule"
-			v-model="dataModel"
-			:maxlength="inputMaxLength"
+      :type="typeInput"
+      :id="idInput"
+      :name="nameInput"
+      :placeholder="placeholderInput"
+      :rules="ruleInput"
+      v-model="dataModel"
+      :maxlength="maxLengthInput"
       class="input"
     />
-    <ErrorMessage :name="inputName" class="error"/>
+    <ErrorMessage :name="inputName" class="error" />
   </div>
 </template>
 
@@ -51,21 +50,21 @@ export default {
       type: String,
       default: "",
     },
-		inputMaxLength: {
-			type: String,
-			default: "12"
-		}
+    inputMaxLength: {
+      type: String,
+      default: "12",
+    },
   },
   data() {
     return {
-      inputId: this.inputId,
-      inputName: this.inputName,
-      inputType: this.inputType,
-      inputPlaceholder: this.inputPlaceholder,
-      inputRule: this.inputRule,
-			inputMaxLength: this.inputMaxLength,
-      labelContent: this.labelContent,
-			dataModel: ""
+      typeInput: this.inputType,
+      idInput: this.inputId,
+      nameInput: this.inputName,
+      placeholderInput: this.inputPlaceholder,
+      ruleInput: this.inputRule,
+      maxLengthInput: this.inputMaxLength,
+      contentLabel: this.labelContent,
+      dataModel: "",
     };
   },
   components: {
@@ -80,7 +79,7 @@ export default {
   display: flex;
   flex-direction: column;
   gap: rem(4);
-	width: 100%;
+  width: 100%;
 
   .label {
     color: $black;
@@ -90,7 +89,7 @@ export default {
     padding: rem(24) rem(14);
     border-radius: rem(4);
     border: rem(1) solid $gray_alt;
-		font-size: rem(18);
+    font-size: rem(18);
     outline: none;
 
     &::placeholder {
@@ -104,8 +103,8 @@ export default {
     }
   }
 
-	.error {
-		color: red;
-	}
+  .error {
+    color: red;
+  }
 }
 </style>

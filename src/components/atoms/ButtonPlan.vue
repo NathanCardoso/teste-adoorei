@@ -7,11 +7,11 @@
 <script>
 export default {
   name: "ButtonPlan",
-	methods: {
-		submit() {
-			this.$emit("submit")
-		}
-	}
+  methods: {
+    submit() {
+      this.$emit("submit");
+    },
+  },
 };
 </script>
 
@@ -34,7 +34,7 @@ export default {
     font-size: rem(20);
     height: 58px;
     margin-top: 85%;
-		cursor: pointer;
+    cursor: pointer;
   }
 }
 </style>

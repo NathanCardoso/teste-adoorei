@@ -1,37 +1,37 @@
 <template>
-	<div class="accommodation-details">
-		<p class="details">{{content}}</p>
-	</div>
+  <div class="accommodation-details">
+    <p class="details">{{ value }}</p>
+  </div>
 </template>
 
 <script>
 export default {
-	name: "AccommodationDetails",
-	props: {
-		content: {
-			type: String,
-			default: "",
-			required: true
-		}
-	},
-	data() {
-		return {
-			content: this.content
-		}
-	}
-}
+  name: "AccommodationDetails",
+  props: {
+    content: {
+      type: String,
+      default: "",
+      required: true,
+    },
+  },
+  data() {
+    return {
+      value: this.content,
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-	.accommodation-details {
-		display: flex;
-		justify-content: center;
+.accommodation-details {
+  display: flex;
+  justify-content: center;
 
-		.details {
-			color: $gray;
-			font-size: rem(16);
-			line-height: rem(20);
-			text-align: center;
-		}
-	}
+  .details {
+    color: $gray;
+    font-size: rem(16);
+    line-height: rem(20);
+    text-align: center;
+  }
+}
 </style>

@@ -1,7 +1,7 @@
 <template>
   <div class="register-action">
     <ParagraphContent content="Ainda não tem conta?" />
-    <router-link :to="registerLink" class="register">Cadastre-se</router-link>
+    <router-link :to="linkRegister" class="register">Cadastre-se</router-link>
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
 	},
 	data() {
 		return {
-			registerLink: this.registerLink
+			linkRegister: this.registerLink
 		}
 	},
   components: {
