@@ -16,6 +16,7 @@
             inputPlaceholder="Seu e-mail"
             labelContent="E-mail"
             inputRule="validateEmail"
+            @inputValue="receiveInputValue"
           />
           <InputForm
             inputId="password"
@@ -24,6 +25,7 @@
             inputPlaceholder="Sua senha"
             labelContent="Senha"
             inputRule="validatePassword"
+            @inputValue="receiveInputValue"
           />
           <ResetPassword />
         </div>
@@ -45,6 +47,11 @@ import { Form } from "vee-validate";
 
 export default {
   name: "UserLogin",
+  data() {
+    return {
+      receiveInput: {},
+    };
+  },
   components: {
     TitleContent,
     ParagraphContent,
@@ -54,8 +61,11 @@ export default {
     Form,
   },
   methods: {
+    receiveInputValue({ name, value }) {
+      this.receiveInput[name] = value;
+    },
     onSubmit() {
-      console.log("ok");
+      console.log(this.receiveInput);
     },
   },
 };

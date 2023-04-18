@@ -52,7 +52,7 @@ export default {
     },
     inputMaxLength: {
       type: String,
-      default: "12",
+      default: "",
     },
   },
   data() {
@@ -71,6 +71,15 @@ export default {
     Field,
     ErrorMessage,
   },
+  watch: {
+    dataModel() {
+      const inputMensage = {
+        name: this.nameInput,
+        value: this.dataModel,
+      };
+      this.$emit("inputValue", inputMensage);
+    },
+  }
 };
 </script>
 

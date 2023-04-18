@@ -16,6 +16,7 @@
             inputPlaceholder="Informe seu nome completo"
             labelContent="Nome completo"
             inputRule="validateFullName"
+            @inputValue="receiveInputValue"
           />
           <InputForm
             inputId="phone"
@@ -26,6 +27,7 @@
             inputRule="validatePhone"
             inputMask="(##) #####-####"
             inputMaxLength="13"
+            @inputValue="receiveInputValue"
           />
           <InputForm
             inputId="email"
@@ -34,6 +36,7 @@
             inputPlaceholder="Seu e-mail"
             labelContent="E-mail"
             inputRule="validateEmail"
+            @inputValue="receiveInputValue"
           />
           <InputForm
             inputId="password"
@@ -42,6 +45,7 @@
             inputPlaceholder="Sua senha"
             labelContent="Senha"
             inputRule="validatePassword"
+            @inputValue="receiveInputValue"
           />
           <div class="confirm-password">
             <InputForm
@@ -64,11 +68,12 @@
             inputPlaceholder="Meu site"
             labelContent="Nome do seu site"
             inputRule="validateSiteName"
+            @inputValue="receiveInputValue"
           />
           <InputAlert text="Exatamente igual o título do seu site" />
         </div>
         <div class="complete-registration">
-          <InputCheckbox />
+          <InputCheckbox @checkValue="receiveCheckValue" />
           <div class="paragraph">
             <p class="paragraph-content">
               Ao concluir com seu cadastro você concorda com nossos
@@ -78,7 +83,11 @@
           </div>
         </div>
         <div class="form-button">
-          <ButtonForm buttonName="Criar conta" />
+          <ButtonForm
+            buttonName="Criar conta"
+            :disabled="!receiveCheck"
+            :class="{ disabled: !receiveCheck }"
+          />
         </div>
       </Form>
     </div>
@@ -97,6 +106,12 @@ import InputAlert from "../components/atoms/InputAlert.vue";
 
 export default {
   name: "UserLogin",
+  data() {
+    return {
+      receiveInput: {},
+      receiveCheck: false,
+    };
+  },
   components: {
     TitleContent,
     ParagraphContent,
@@ -107,11 +122,18 @@ export default {
     InputAlert,
     InputCheckbox,
   },
-	methods: {
-		onSubmit() {
-			console.log("ok")
-		}
-	}
+  methods: {
+    receiveInputValue({ name, value }) {
+      this.receiveInput[name] = value;
+    },
+    receiveCheckValue(value) {
+      this.receiveCheck = value;
+    },
+    onSubmit() {
+      console.log(this.receiveInput);
+      console.log(this.receiveCheck);
+    },
+  },
 };
 </script>
 

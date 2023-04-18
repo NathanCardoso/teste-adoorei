@@ -1,14 +1,26 @@
 <template>
   <label class="custom-checkbox">
-    <input type="checkbox" />
+    <input type="checkbox" v-model="check"/>
     <span class="checkmark"></span>
     <span class="label-text"></span>
   </label>
 </template>
 
 <script>
+
 export default {
   name: "InputCheckbox",
+	data() {
+		return {
+			check: false
+		}
+	},
+	watch: {
+    check() {
+      const checkValue = this.check
+      this.$emit("checkValue", checkValue);
+    },
+	}
 };
 </script>
 

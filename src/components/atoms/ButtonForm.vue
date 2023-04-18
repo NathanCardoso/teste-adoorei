@@ -37,5 +37,11 @@ export default {
   text-transform: uppercase;
   font-size: rem(16);
   cursor: pointer;
+
+  &.disabled {
+    background: $gray_alt_1;
+    color: $gray;
+    cursor: not-allowed;
+  }
 }
 </style>
