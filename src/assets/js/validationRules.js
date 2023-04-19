@@ -11,7 +11,7 @@ const validateEmail = (value) => {
 
 const validatePassword = (value) => {
   if (!value) return "O campo senha é obrigatório.";
-  if (value.length < 6) return "No mínimo 8 caracteres.";
+  if (value.length < 6) return "No mínimo 6 caracteres.";
 
   return true;
 };

@@ -55,7 +55,7 @@
               labelContent="Confirme sua senha"
               inputRule="validatePassword|confirmedPassword:password"
             />
-            <InputAlert text="No mínimo 8 caracteres" />
+            <InputAlert text="No mínimo 6 caracteres" />
           </div>
         </div>
         <div class="form-site">
