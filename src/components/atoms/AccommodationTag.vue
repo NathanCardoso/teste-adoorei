@@ -42,18 +42,16 @@ export default {
 
   .more-used {
     border-radius: rem(12);
-    width: 150px;
     text-align: center;
-    padding: rem(8);
+    padding: rem(8) rem(16);
     background: $green;
   }
 
   .chosen-product {
     background: $black;
     border-radius: rem(12);
-    width: 200px;
     text-align: center;
-    padding: rem(8);
+    padding: rem(8) rem(16);
   }
 }
 </style>

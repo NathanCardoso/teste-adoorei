@@ -22,7 +22,7 @@ export default {
 
 <style lang="scss">
 .input-alert {
-  font-size: rem(16);
+  font-size: rem(14);
   color: $gray;
   display: inline-block;
   width: 100%;

@@ -15,7 +15,7 @@
       <AccommodationParagraph
         :content="dataObject.accommodation?.recommendation"
       />
-      <div class="accommodation-button">
+      <div class="accommodation-button" v-if="buttonDynamic">
         <ButtonForm
           buttonName="Escolher esse plano"
           @submit="handleClick(objectData)"
@@ -62,6 +62,10 @@ export default {
       type: String,
       default: "li",
     },
+		dynamicButton: {
+			type: Boolean,
+			default: true
+		}
   },
   data() {
     return {
@@ -70,6 +74,7 @@ export default {
       displayDynamic: this.dynamicDisplay,
       objectData: this.dataObject,
       definedTag: this.tag,
+			buttonDynamic: this.dynamicButton
     };
   },
   components: {
@@ -100,7 +105,7 @@ export default {
 .accommodation-server {
   max-width: 280px;
   background: $white;
-  padding: rem(30) rem(36);
+  padding: rem(40);
   border-radius: rem(4);
   display: flex;
   flex-direction: column;
@@ -121,11 +126,10 @@ export default {
   }
 
   .accommodation-paragraph {
-    padding: rem(16);
-    border-top: rem(1) solid $gray_alt;
-    border-bottom: rem(1) solid $gray_alt;
+    padding: rem(20);
+    border-top: rem(1) solid $gray_alt_1;
+    border-bottom: rem(1) solid $gray_alt_1;
     text-align: center;
-    line-height: rem(26);
   }
 
   .accommodation-button {

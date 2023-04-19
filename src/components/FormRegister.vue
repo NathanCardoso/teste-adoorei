@@ -1,7 +1,7 @@
 <template>
   <section class="form">
     <div class="container">
-      <Form @submit="onSubmit" class="form-login">
+      <Form @submit="onSubmit" class="form-register">
         <div class="form-header">
           <TitleContent contentValue="Dados pessoais" />
           <ParagraphContent
@@ -150,13 +150,13 @@ export default {
 
 <style lang="scss" scoped>
 .form {
-  width: 500px;
-  padding: rem(30);
+  width: 570px;
+  padding: rem(32);
   background: $white;
   border-radius: rem(4);
   border: rem(1) solid $gray_alt_1;
 
-  .form-login {
+  .form-register {
     .form-header {
       display: flex;
       flex-direction: column;
@@ -168,7 +168,7 @@ export default {
       margin: rem(20) 0 rem(20);
       display: flex;
       flex-direction: column;
-      gap: rem(20);
+      gap: rem(16);
 
       .confirm-password {
         display: flex;
@@ -194,8 +194,8 @@ export default {
 
       .paragraph {
         .paragraph-content {
-          font-size: rem(18);
-          line-height: rem(22);
+          font-size: rem(16);
+          line-height: rem(20);
           color: $black;
 
           .link {

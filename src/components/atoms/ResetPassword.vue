@@ -14,12 +14,13 @@ export default {
 .reset-password {
 	display: flex;
 	justify-content: flex-end;
-	margin-top: rem(-10);
+	margin-top: rem(-5);
 
 	.reset {
 		color: $gray;
 		text-decoration: none;
-		font-size: rem($paragraphSize);
+		font-size: rem(16);
+		line-height: rem(20);
 	}
 }
 </style>

@@ -77,8 +77,8 @@ export default {
 
 <style lang="scss" scoped>
 .form {
-  width: 500px;
-  padding: rem(30);
+  width: 570px;
+  padding: rem(30) rem(32);
   background: $white;
   border-radius: rem(4);
   border: rem(1) solid $gray_alt_1;

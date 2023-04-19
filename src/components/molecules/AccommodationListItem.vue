@@ -57,14 +57,14 @@ export default {
   .list-item {
     .item {
       .item-list-description {
-        margin-top: rem(16);
+        margin-top: rem(10);
 
         .item-description {
           display: flex;
-          gap: rem(8);
+          gap: rem(10);
 
           + .item-description {
-            margin-top: rem(16);
+            margin-top: rem(10);
           }
         }
       }

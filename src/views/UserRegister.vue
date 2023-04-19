@@ -15,6 +15,7 @@
           dynamicText="Plano escolhido"
           dynamicClass="chosen-product"
           :dynamicDisplay="true"
+					:dynamicButton="false"
           tag="div"
         />
         <ButtonPlan @submit="replacePlan" />
@@ -81,7 +82,7 @@ export default {
 .user-register {
   display: flex;
   align-items: flex-start;
-  gap: rem(24);
+  gap: rem(20);
 
   .wrapper-accommodation {
     position: relative;

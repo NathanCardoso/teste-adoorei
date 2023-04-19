@@ -1,8 +1,10 @@
 <template>
   <main class="default">
     <LogoLocaWeb />
-    <FormLogin />
-    <RegisterAction registerLink="plans" />
+    <div class="wrapper">
+      <FormLogin />
+      <RegisterAction registerLink="plans" />
+    </div>
   </main>
 </template>
 
@@ -21,4 +23,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	gap: rem(32);
+	align-items: center;
+}
+</style>

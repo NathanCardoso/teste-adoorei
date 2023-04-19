@@ -87,17 +87,19 @@ export default {
 .input-form {
   display: flex;
   flex-direction: column;
-  gap: rem(4);
+  gap: rem(8);
   width: 100%;
 
   .label {
-    color: $black;
+    color: $black_alt;
+		font-size: rem(16);
+		line-height: rem(20);
   }
 
   .input {
     padding: rem(24) rem(14);
     border-radius: rem(4);
-    border: rem(1) solid $gray_alt;
+    border: rem(1) solid $gray;
     font-size: rem(18);
     outline: none;
 

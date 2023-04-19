@@ -35,7 +35,7 @@ export default {
 <style lang="scss" scoped>
 .list-title {
   .title {
-    color: $gray;
+    color: $gray_alt;
     font-size: rem(18);
     font-weight: bold;
 

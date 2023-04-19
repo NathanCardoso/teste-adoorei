@@ -24,8 +24,9 @@ export default {
 <style lang="scss" scoped>
 .accommodation-number {
   .accommodation-title {
-    font-size: rem(28);
-    color: $gray;
+    font-size: rem(26);
+		line-height: rem(32);
+    color: $gray_alt;
     text-align: center;
     font-weight: bold;
   }

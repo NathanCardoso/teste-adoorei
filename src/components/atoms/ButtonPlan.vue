@@ -28,12 +28,12 @@ export default {
 
   .button {
     background: $white;
-    border: rem(2) solid $black;
+    border: rem(2) solid $gray;
     width: 100%;
-    border-radius: rem(8);
+    border-radius: rem(4);
     font-size: rem(20);
     height: 58px;
-    margin-top: 85%;
+    margin-top: 80%;
     cursor: pointer;
   }
 }

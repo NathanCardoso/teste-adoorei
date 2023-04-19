@@ -28,10 +28,11 @@ export default {
   justify-content: center;
 
   .details {
-    color: $gray;
-    font-size: rem(16);
-    line-height: rem(20);
+    color: $gray_alt;
+    font-size: rem(14);
+    line-height: rem(18);
     text-align: center;
+		font-weight: 400;
   }
 }
 </style>

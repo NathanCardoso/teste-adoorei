@@ -32,7 +32,7 @@ export default {
   background: $pink;
   color: $white;
   width: 100%;
-  padding: rem(20) 0;
+  padding: rem(20) rem(24);
   text-align: center;
   text-transform: uppercase;
   font-size: rem(16);

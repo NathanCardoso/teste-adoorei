@@ -1,11 +1,13 @@
 <template>
   <main class="default">
     <LogoLocaWeb />
-    <TitleContent
-      contentValue="Você está muito próximo de mudar a forma de"
-      emphasis="hospedar seu site"
-    />
-    <ParagraphContent content="Escolha o seu plano" />
+    <div class="text-plans">
+      <TitleContent
+        contentValue="Você está muito próximo de mudar a forma de"
+        emphasis="hospedar seu site"
+      />
+      <ParagraphContent content="Escolha o seu plano" />
+    </div>
     <ul class="accommodations">
       <AccommodationServer
         v-for="(data, index) in accommodationPlan"
@@ -42,8 +44,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title {
-  text-align: center;
+
+.text-plans {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: rem(20);
+	
+	.title {
+		text-align: center;
+	}
 }
 
 .accommodations {
