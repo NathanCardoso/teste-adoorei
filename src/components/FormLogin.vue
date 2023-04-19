@@ -122,6 +122,7 @@ export default {
 
   @media screen and (max-width: 479px) {
     width: auto;
+		padding: rem(30) rem(24);
   }
 }
 </style>

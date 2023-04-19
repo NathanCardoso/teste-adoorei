@@ -47,7 +47,7 @@ export default {
   position: fixed;
   top: rem(8);
   right: 0;
-  width: 100%;
+  max-width: 300px;
   animation: mymove 0.4s;
 
   @keyframes mymove {
