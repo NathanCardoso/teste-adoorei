@@ -3,10 +3,15 @@ import UserLogin from "../views/UserLogin.vue";
 import UserPlans from "../views/UserPlans.vue";
 import UserRegister from "../views/UserRegister.vue";
 import UserAccount from "../views/UserAccount.vue";
+import PageNotFound from "../views/PageNotFound.vue"
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
+		{
+			path: "/:pathMatch(.*)",
+			component: PageNotFound
+		},
     {
       path: "/",
       name: "user-login",

@@ -34,6 +34,11 @@
       </Form>
     </div>
   </section>
+  <AlertStatus
+    typeAlert="error"
+    mensageAlert="Usuário ou senha inválido."
+    v-show="loginError"
+  />
 </template>
 
 <script>
@@ -43,12 +48,14 @@ import InputForm from "./atoms/InputForm.vue";
 import ResetPassword from "./atoms/ResetPassword.vue";
 import ButtonForm from "./atoms/ButtonForm.vue";
 import { Form } from "vee-validate";
+import AlertStatus from "./organisms/AlertStatus.vue";
 
 export default {
   name: "UserLogin",
   data() {
     return {
       receiveInput: {},
+      loginError: false,
     };
   },
   components: {
@@ -58,18 +65,24 @@ export default {
     ResetPassword,
     ButtonForm,
     Form,
+    AlertStatus,
   },
   methods: {
     receiveInputValue({ name, value }) {
       this.receiveInput[name] = value;
     },
     async onSubmit() {
-			try {
-				await this.$store.dispatch("userLogin", this.receiveInput)
-				this.$router.push("/account")
-			} catch(error) {
-				console.log(error, "lululu")
-			}
+      try {
+        await this.$store.dispatch("userLogin", this.receiveInput);
+        this.$router.push("/account");
+      } catch (error) {
+        console.error(error);
+        this.loginError = true;
+
+        setTimeout(() => {
+          this.loginError = false;
+        }, 3000);
+      }
     },
   },
 };

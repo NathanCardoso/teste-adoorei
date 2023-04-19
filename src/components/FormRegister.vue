@@ -92,6 +92,11 @@
       </Form>
     </div>
   </section>
+  <AlertStatus
+    typeAlert="error"
+    mensageAlert="Não foi possível criar usuário"
+    v-show="createError"
+  />
 </template>
 
 <script>
@@ -103,6 +108,7 @@ import ResetPassword from "./atoms/ResetPassword.vue";
 import ButtonForm from "./atoms/ButtonForm.vue";
 import { Form } from "vee-validate";
 import InputAlert from "../components/atoms/InputAlert.vue";
+import AlertStatus from "../components/organisms/AlertStatus.vue";
 
 export default {
   name: "UserLogin",
@@ -110,7 +116,8 @@ export default {
     return {
       receiveInput: {},
       receiveCheck: false,
-			planSelected: ""
+      planSelected: "",
+      createError: false,
     };
   },
   components: {
@@ -122,6 +129,7 @@ export default {
     Form,
     InputAlert,
     InputCheckbox,
+    AlertStatus,
   },
   methods: {
     receiveInputValue({ name, value }) {
@@ -131,20 +139,25 @@ export default {
       this.receiveCheck = value;
     },
     async onSubmit() {
-			try {
-				await this.$store.dispatch("userCreate", this.receiveInput)
-				localStorage.setItem("user", JSON.stringify(this.receiveInput))
-				if(localStorage.getItem("user")) {
-					this.$router.push("/account")
-				}
-			} catch(error) {
-				console.log(error, "lululu")
-			}
+      try {
+        await this.$store.dispatch("userCreate", this.receiveInput);
+        localStorage.setItem("user", JSON.stringify(this.receiveInput));
+        if (localStorage.getItem("user")) {
+          this.$router.push("/account");
+        }
+      } catch (error) {
+        console.error(error);
+        this.createError = true;
+
+        setTimeout(() => {
+          this.createError = false;
+        }, 3000);
+      }
     },
   },
-	beforeMount() {
-		this.receiveInput.planSelected = localStorage.getItem("planSelected")
-	}
+  beforeMount() {
+    this.receiveInput.planSelected = localStorage.getItem("planSelected");
+  },
 };
 </script>
 
