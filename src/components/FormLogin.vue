@@ -10,17 +10,16 @@
         </div>
         <div class="form-input">
           <InputForm
-            inputId="email"
-            inputName="userEmail"
-            inputType="email"
-            inputPlaceholder="Seu e-mail"
-            labelContent="E-mail"
-            inputRule="validateEmail"
+            inputId="user-name"
+            inputName="name"
+            inputType="text"
+            inputPlaceholder="Seu usuário"
+            labelContent="Usuário"
             @inputValue="receiveInputValue"
           />
           <InputForm
-            inputId="password"
-            inputName="userPassword"
+            inputId="user-password"
+            inputName="password"
             inputType="password"
             inputPlaceholder="Sua senha"
             labelContent="Senha"
@@ -64,8 +63,13 @@ export default {
     receiveInputValue({ name, value }) {
       this.receiveInput[name] = value;
     },
-    onSubmit() {
-      console.log(this.receiveInput);
+    async onSubmit() {
+			try {
+				await this.$store.dispatch("userLogin", this.receiveInput)
+				this.$router.push("/account")
+			} catch(error) {
+				console.log(error, "lululu")
+			}
     },
   },
 };

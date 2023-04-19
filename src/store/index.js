@@ -22,6 +22,14 @@ export default createStore({
 			context.commit("CREATE_USER", payload)
 			return api.post("/users", payload)
 			this.$router.push("/account")
+		},
+		userLogin(context, payload) {
+			return api.login({
+				username: payload.name,
+				password: payload.password
+			}).then(response => {
+				localStorage.token = `Bearer ${response.data.token}`
+			})
 		}
   },
   getters: {
