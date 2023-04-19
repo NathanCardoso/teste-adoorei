@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Sora';
+    src: url('../../../public/fonts/subset-Sora-Regular.eot');
+    src: url('../../../public/fonts/subset-Sora-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../../../public/fonts/subset-Sora-Regular.woff2') format('woff2'),
+        url('../../../public/fonts/subset-Sora-Regular.woff') format('woff'),
+        url('../../../public/fonts/subset-Sora-Regular.ttf') format('truetype'),
+        url('../../../public/fonts/subset-Sora-Regular.svg#Sora-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('../../../public/fonts/subset-Sora-Bold.eot');
+    src: url('../../../public/fonts/subset-Sora-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../../../public/fonts/subset-Sora-Bold.woff2') format('woff2'),
+        url('../../../public/fonts/subset-Sora-Bold.woff') format('woff'),
+        url('../../../public/fonts/subset-Sora-Bold.ttf') format('truetype'),
+        url('../../../public/fonts/subset-Sora-Bold.svg#Sora-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

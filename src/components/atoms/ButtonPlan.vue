@@ -32,6 +32,7 @@ export default {
     width: 100%;
     border-radius: rem(4);
     font-size: rem(20);
+		font-family: "Sora";
     height: 58px;
     margin-top: 80%;
     cursor: pointer;

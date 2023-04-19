@@ -70,6 +70,7 @@ export default {
     border: none;
     cursor: pointer;
     font-size: rem(28);
+		font-family: "Sora";
     color: $white;
   }
 
@@ -81,6 +82,7 @@ export default {
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
     font-size: rem(20);
+		font-family: "Sora";
 
     &:hover {
       background: $pink;

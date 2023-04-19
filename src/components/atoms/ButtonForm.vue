@@ -36,6 +36,7 @@ export default {
   text-align: center;
   text-transform: uppercase;
   font-size: rem(16);
+	font-family: "Sora";
   cursor: pointer;
 
   &.disabled {

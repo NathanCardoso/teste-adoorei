@@ -1,5 +1,6 @@
-@import './color.scss';
-@import './fonts.scss';
-@import './rem.scss';
-@import './container.scss';
-@import './default.scss';
+@import './commons/color.scss';
+@import './commons/fonts.scss';
+@import './helpers/rem.scss';
+@import './helpers/container.scss';
+@import './commons/default.scss';
+@import './styleFont.scss';

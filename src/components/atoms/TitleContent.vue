@@ -36,7 +36,7 @@ export default {
 <style lang="scss">
 .title {
   .title-content {
-    font-family: "Ubuntu", arial, sans-serif;
+    // font-family: "Sora";
     font-size: rem($titleSize);
     font-weight: bold;
     color: $black;

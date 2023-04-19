@@ -15,6 +15,10 @@ export default {
 </script>
 
 <style lang="scss">
+#app {
+	font-family: "Sora";
+}
+
 .v-enter,
 .v-leave-to {
   opacity: 0;
