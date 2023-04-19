@@ -69,7 +69,7 @@ export default {
     const userRegisterWrapper = document.querySelector(
       ".user-register .wrapper"
     );
-    userRegisterWrapper.style.maxHeight = userRegister.clientHeight - 60 + "px";
+    userRegisterWrapper.style.maxHeight = userRegister.clientHeight - 76 + "px";
   },
 };
 </script>

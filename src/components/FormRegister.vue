@@ -25,8 +25,7 @@
             inputPlaceholder="(99) 99999-0000"
             labelContent="Celular"
             inputRule="validatePhone"
-            inputMask="(##) #####-####"
-            inputMaxLength="13"
+            inputMaxLength="11"
             @inputValue="receiveInputValue"
           />
           <InputForm
