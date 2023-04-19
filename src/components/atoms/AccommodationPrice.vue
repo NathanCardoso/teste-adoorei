@@ -33,9 +33,11 @@ export default {
   .price {
     color: $pink;
     font-size: rem(20);
+		line-height: rem(24);
 
     .price-number {
-      font-size: rem(36);
+      font-size: rem(34);
+			line-height: rem(42);
       font-weight: bold;
     }
   }
