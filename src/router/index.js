@@ -26,11 +26,26 @@ const router = createRouter({
       path: "/account",
       name: "user-account",
       component: UserAccount,
+      meta: {
+        requiresAuth: true,
+      },
     },
   ],
   scrollBehavior() {
     return window.scrollTo({ top: 0, behavior: "smooth" });
   },
+});
+
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
+	const auth = localStorage.getItem("user") || localStorage.getItem("token")
+
+  if (requiresAuth && !auth) {
+		next("/");
+  } else {
+		next()
+	}
+
 });
 
 export default router;

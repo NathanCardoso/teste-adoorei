@@ -133,8 +133,10 @@ export default {
     async onSubmit() {
 			try {
 				await this.$store.dispatch("userCreate", this.receiveInput)
-				localStorage.setItem('user', JSON.stringify(this.receiveInput))
-				this.$router.push("/account")
+				localStorage.setItem("user", JSON.stringify(this.receiveInput))
+				if(localStorage.getItem("user")) {
+					this.$router.push("/account")
+				}
 			} catch(error) {
 				console.log(error, "lululu")
 			}
