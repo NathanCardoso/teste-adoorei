@@ -6,39 +6,68 @@
       </aside>
       <section class="user-content">
         <div class="user">
-          <TitleContent contentValue="Olá João," />
+          <TitleContent :contentValue="nameUser" />
           <ParagraphContent
             content="Seja bem vindo a sua conta de hospedagem."
           />
           <div class="video">
             <iframe
               class="video-content"
-              src="https://www.youtube.com/embed/bEl6yN3vd-U"
+              src="https://www.youtube.com/embed/fpa2W3YNg0Q"
             />
           </div>
         </div>
         <CenterHelp link="/account" />
       </section>
-			<UserProfile />
+      <UserProfile />
     </div>
   </div>
 </template>
 
 <script>
 import LogoLocaWeb from "../components/atoms/LogoLocaWeb.vue";
-import UserProfile from "../components/atoms/UserProfile.vue"
+import UserProfile from "../components/atoms/UserProfile.vue";
 import ParagraphContent from "../components/atoms/ParagraphContent.vue";
 import TitleContent from "../components/atoms/TitleContent.vue";
 import CenterHelp from "../components/molecules/CenterHelp.vue";
+import { mapMutations, mapGetters } from "vuex";
 
 export default {
   name: "UserAccount",
   components: {
     LogoLocaWeb,
-		UserProfile,
+    UserProfile,
     TitleContent,
     ParagraphContent,
     CenterHelp,
+  },
+  data() {
+    return {
+      nameUser: "",
+    };
+  },
+  methods: {
+    ...mapMutations(["SET_USER", "CLEAR_USER"]),
+    ...mapGetters(["userName"]),
+    getUser() {
+      const user = JSON.parse(localStorage.getItem("user"));
+      return user;
+    },
+  },
+  computed: {
+    wellcomeUserName() {
+      const name = this.userName().split(" ");
+      return `Olá ${name[0]},`;
+    },
+  },
+  beforeMount() {
+    this.$store.state.user.username ?? this.SET_USER(this.getUser());
+
+    if (localStorage.getItem("token")) {
+      this.nameUser = "Olá João,";
+    } else {
+      this.nameUser = this.wellcomeUserName;
+    }
   },
 };
 </script>
@@ -85,6 +114,8 @@ export default {
       grid-template-columns: 1fr;
       gap: rem(24);
       margin-top: rem(24);
+      position: relative;
+      justify-items: start;
 
       .user-content {
         margin-top: 0;
@@ -102,10 +133,8 @@ export default {
 
   @media screen and (max-width: 479px) {
     .wrapper {
-      // margin-top: 0;
-
       .aside-logo {
-        align-self: end;
+        align-self: center;
       }
 
       .user-content {

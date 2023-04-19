@@ -3,17 +3,16 @@ import { api } from "../assets/js/services"
 
 export default createStore({
   state: {
-		selectPlan: 0,
 		user: {}
   },
   mutations: {
-		GET_SELECT_PLAN(state) {
-			return state.selectPlan
-		},
-		SET_SELECT_PLAN(state, payload) {
-			state.selectPlan = payload
-		},
 		CREATE_USER(state, payload) {
+			state.user = Object.assign(state.user, payload)
+		},
+		SET_USER(state, payload) {
+			state.user = Object.assign(state.user, payload)
+		},
+		CLEAR_USER(state, payload) {
 			state.user = Object.assign(state.user, payload)
 		}
   },
@@ -33,5 +32,8 @@ export default createStore({
 		}
   },
   getters: {
+		userName(state) {
+			return state.user.username
+		}
   }
 })

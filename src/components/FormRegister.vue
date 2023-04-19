@@ -110,6 +110,7 @@ export default {
     return {
       receiveInput: {},
       receiveCheck: false,
+			planSelected: ""
     };
   },
   components: {
@@ -132,12 +133,16 @@ export default {
     async onSubmit() {
 			try {
 				await this.$store.dispatch("userCreate", this.receiveInput)
+				localStorage.setItem('user', JSON.stringify(this.receiveInput))
 				this.$router.push("/account")
 			} catch(error) {
 				console.log(error, "lululu")
 			}
     },
   },
+	beforeMount() {
+		this.receiveInput.planSelected = localStorage.getItem("planSelected")
+	}
 };
 </script>
 

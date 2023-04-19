@@ -34,7 +34,6 @@ import AccommodationParagraph from "./atoms/AccommodationParagraph.vue";
 import ButtonForm from "./atoms/ButtonForm.vue";
 import AccommodationList from "./organisms/AccommodationList.vue";
 import AccommodationTag from "./atoms/AccommodationTag.vue";
-import { mapMutations } from "vuex";
 
 export default {
   name: "AccommodationServer",
@@ -83,9 +82,7 @@ export default {
     AccommodationTag,
   },
   methods: {
-    ...mapMutations(["SET_SELECT_PLAN"]),
     handleClick({ id }) {
-      this.SET_SELECT_PLAN(id);
       this.toAddPlanLocalStorage(id);
       this.replaceRouter("/register");
     },
